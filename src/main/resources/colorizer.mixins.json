@@ -4,6 +4,7 @@
   "package": "net.immortaldevs.colorizer.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "BlockMixin",
     "ItemMixin",
     "TexturedRenderLayersMixin"
   ],
