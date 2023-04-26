@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "colorizer",
+  "version": "${version}",
+  "name": "Chest Colorizer",
+  "description": "Color-code your chests to easily distinguish between different types of items stored in them",
+  "authors": [
+    "kalucky0",
+    "24Chrome"
+  ],
+  "contact": {
+    "homepage": "https://immortaldevs.net/",
+    "sources": "https://github.com/devs-immortal/chest-colorizer",
+    "issues": "https://github.com/devs-immortal/chest-colorizer/issues"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.com/invite/wmMa47n"
+      },
+      "update_checker": false
+    }
+  },
+  "license": "MIT",
+  "icon": "assets/colorizer/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.immortaldevs.colorizer.ColorizerMod"
+    ]
+  },
+  "mixins": [
+    "colorizer.mixins.json"
+  ],
+  "accessWidener": "colorizer.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "minecraft": "~1.19.4",
+    "java": ">=17"
+  }
+}
