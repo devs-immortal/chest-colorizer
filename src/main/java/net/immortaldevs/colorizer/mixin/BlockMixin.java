@@ -15,6 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin {
     @Inject(at = @At("HEAD"), method = "onBroken(Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V")
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state, CallbackInfo info) {
-        if ((Object) this instanceof ChestBlock) ColorizedChest.clearChestColor(pos);
+        if ((Object) this instanceof ChestBlock) ColorizedChest.clearChestColor(pos, state);
     }
 }

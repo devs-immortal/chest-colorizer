@@ -1,7 +1,9 @@
 package net.immortaldevs.colorizer;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.ChestType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.SpriteIdentifier;
@@ -100,9 +102,18 @@ public class ColorizedChest {
         Config.setColor(worldName, pos, ChestColor.fromDyeColor(dyeItem.getColor()));
     }
 
-    public static void clearChestColor(BlockPos pos) {
+    public static void clearChestColor(BlockPos pos, BlockState state) {
+        Direction chestDirection = state.get(ChestBlock.FACING);
+        ChestType chestType = state.get(ChestBlock.CHEST_TYPE);
         String worldName = getLevelName();
         Config.removeColor(worldName, pos);
+        if (chestType == ChestType.LEFT) {
+            BlockPos right = pos.offset(chestDirection.rotateYClockwise());
+            Config.removeColor(worldName, right);
+        } else if (chestType == ChestType.RIGHT) {
+            BlockPos left = pos.offset(chestDirection.rotateYCounterclockwise());
+            Config.removeColor(worldName, left);
+        }
     }
 
     private static ChestColor getColor(String worldName, BlockEntity entity, ChestType type) {

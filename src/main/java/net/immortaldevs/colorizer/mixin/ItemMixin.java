@@ -19,7 +19,7 @@ public class ItemMixin {
             if ((Object) this instanceof DyeItem)
                 ColorizedChest.updateChestColor(context.getBlockPos(), (DyeItem) (Object) this);
             else if ((Object) this == Items.PAPER)
-                ColorizedChest.clearChestColor(context.getBlockPos());
+                ColorizedChest.clearChestColor(context.getBlockPos(), blockEntity.getCachedState());
         }
     }
 }
