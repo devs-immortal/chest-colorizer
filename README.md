@@ -2,7 +2,7 @@
 
 ![Code license (MIT)](https://img.shields.io/github/license/devs-immortal/chest-colorizer)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devs-immortal/chest-colorizer)
-![Minecraft 1.19.4](https://img.shields.io/badge/Minecraft-1.19.4-yellowgreen)
+![Minecraft 1.20.5](https://img.shields.io/badge/Minecraft-1.20.6-yellowgreen)
 
 Color-code your chests to easily distinguish between different types of items stored in them. 
 With this mod, you can use a variety of dyes to assign a specific color to a chest,
@@ -10,7 +10,7 @@ making it easy to identify what's inside with just a quick glance.
 
 ## Installation
 
-1. Download and install [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.19.4.
+1. Download and install [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.20.6.
 2. Download Chest Colorizer mods.
 3. Place the downloaded mod file in the "mods" folder located in your Minecraft game directory.
 4. Launch Minecraft with the Fabric mod loader and enjoy the mod!
