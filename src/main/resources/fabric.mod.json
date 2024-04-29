@@ -35,7 +35,7 @@
   "accessWidener": "colorizer.accesswidener",
   "depends": {
     "fabricloader": ">=0.15",
-    "minecraft": "~1.20",
-    "java": ">=17"
+    "minecraft": ">=1.20.4 <1.21",
+    "java": ">=21"
   }
 }
