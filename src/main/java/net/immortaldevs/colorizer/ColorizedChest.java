@@ -86,6 +86,7 @@ public class ColorizedChest {
             case PURPLE -> getColorizedTextureId(type, PURPLE, PURPLE_LEFT, PURPLE_RIGHT);
             case MAGENTA -> getColorizedTextureId(type, MAGENTA, MAGENTA_LEFT, MAGENTA_RIGHT);
             case PINK -> getColorizedTextureId(type, PINK, PINK_LEFT, PINK_RIGHT);
+            case DEFAULT -> null;
         };
     }
 

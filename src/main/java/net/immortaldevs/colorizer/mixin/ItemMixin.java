@@ -1,10 +1,16 @@
 package net.immortaldevs.colorizer.mixin;
 
+import net.immortaldevs.colorizer.ChestColor;
 import net.immortaldevs.colorizer.ColorizedChest;
+import net.immortaldevs.colorizer.ColorizerMod;
+import net.minecraft.block.BarrelBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,12 +20,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ItemMixin {
     @Inject(at = @At("HEAD"), method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;")
     public void useOnBlock(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
-        BlockEntity blockEntity = context.getWorld().getBlockEntity(context.getBlockPos());
+        Item item = (Item) (Object) this;
+        World world = context.getWorld();
+        BlockPos blockPos = context.getBlockPos();
+        BlockEntity blockEntity = world.getBlockEntity(blockPos);
+
         if (blockEntity instanceof ChestBlockEntity) {
-            if ((Object) this instanceof DyeItem)
-                ColorizedChest.updateChestColor(context.getBlockPos(), (DyeItem) (Object) this);
-            else if ((Object) this == Items.PAPER)
-                ColorizedChest.clearChestColor(context.getBlockPos(), blockEntity.getCachedState());
+            if (item instanceof DyeItem)
+                ColorizedChest.updateChestColor(blockPos, (DyeItem) item);
+            else if (item == Items.PAPER)
+                ColorizedChest.clearChestColor(blockPos, blockEntity.getCachedState());
+        }
+
+        BlockState blockState = context.getWorld().getBlockState(blockPos);
+        if (blockState.getBlock() instanceof BarrelBlock) {
+            if (item instanceof DyeItem)
+                blockState = blockState.with(ColorizerMod.COLOR, ChestColor.fromDyeColor(((DyeItem) item).getColor()));
+            else if (item == Items.PAPER)
+                blockState = blockState.with(ColorizerMod.COLOR, ChestColor.DEFAULT);
+            world.setBlockState(blockPos, blockState);
         }
     }
 }

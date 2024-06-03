@@ -1,0 +1,820 @@
+{
+  "variants": {
+    "facing=down,open=false,color=default": {
+      "model": "minecraft:block/barrel"
+    },
+    "facing=down,open=true,color=default": {
+      "model": "minecraft:block/barrel_open"
+    },
+    "facing=east,open=false,color=default": {
+      "model": "minecraft:block/barrel",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=default": {
+      "model": "minecraft:block/barrel_open",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=default": {
+      "model": "minecraft:block/barrel"
+    },
+    "facing=north,open=true,color=default": {
+      "model": "minecraft:block/barrel_open"
+    },
+    "facing=south,open=false,color=default": {
+      "model": "minecraft:block/barrel",
+      "y": 180
+    },
+    "facing=south,open=true,color=default": {
+      "model": "minecraft:block/barrel_open",
+      "y": 180
+    },
+    "facing=up,open=false,color=default": {
+      "model": "minecraft:block/barrel",
+      "x": 180
+    },
+    "facing=up,open=true,color=default": {
+      "model": "minecraft:block/barrel_open",
+      "x": 180
+    },
+    "facing=west,open=false,color=default": {
+      "model": "minecraft:block/barrel",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=default": {
+      "model": "minecraft:block/barrel_open",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=white": {
+      "model": "minecraft:block/barrel_white"
+    },
+    "facing=down,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white"
+    },
+    "facing=east,open=false,color=white": {
+      "model": "minecraft:block/barrel_white",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=white": {
+      "model": "minecraft:block/barrel_white"
+    },
+    "facing=north,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white"
+    },
+    "facing=south,open=false,color=white": {
+      "model": "minecraft:block/barrel_white",
+      "y": 180
+    },
+    "facing=south,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white",
+      "y": 180
+    },
+    "facing=up,open=false,color=white": {
+      "model": "minecraft:block/barrel_white",
+      "x": 180
+    },
+    "facing=up,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white",
+      "x": 180
+    },
+    "facing=west,open=false,color=white": {
+      "model": "minecraft:block/barrel_white",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=white": {
+      "model": "minecraft:block/barrel_open_white",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray"
+    },
+    "facing=down,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray"
+    },
+    "facing=east,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray"
+    },
+    "facing=north,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray"
+    },
+    "facing=south,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray",
+      "y": 180
+    },
+    "facing=south,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray",
+      "y": 180
+    },
+    "facing=up,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray",
+      "x": 180
+    },
+    "facing=up,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray",
+      "x": 180
+    },
+    "facing=west,open=false,color=light_gray": {
+      "model": "minecraft:block/barrel_light_gray",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=light_gray": {
+      "model": "minecraft:block/barrel_open_light_gray",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray"
+    },
+    "facing=down,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray"
+    },
+    "facing=east,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray"
+    },
+    "facing=north,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray"
+    },
+    "facing=south,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray",
+      "y": 180
+    },
+    "facing=south,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray",
+      "y": 180
+    },
+    "facing=up,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray",
+      "x": 180
+    },
+    "facing=up,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray",
+      "x": 180
+    },
+    "facing=west,open=false,color=gray": {
+      "model": "minecraft:block/barrel_gray",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=gray": {
+      "model": "minecraft:block/barrel_open_gray",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=black": {
+      "model": "minecraft:block/barrel_black"
+    },
+    "facing=down,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black"
+    },
+    "facing=east,open=false,color=black": {
+      "model": "minecraft:block/barrel_black",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=black": {
+      "model": "minecraft:block/barrel_black"
+    },
+    "facing=north,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black"
+    },
+    "facing=south,open=false,color=black": {
+      "model": "minecraft:block/barrel_black",
+      "y": 180
+    },
+    "facing=south,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black",
+      "y": 180
+    },
+    "facing=up,open=false,color=black": {
+      "model": "minecraft:block/barrel_black",
+      "x": 180
+    },
+    "facing=up,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black",
+      "x": 180
+    },
+    "facing=west,open=false,color=black": {
+      "model": "minecraft:block/barrel_black",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=black": {
+      "model": "minecraft:block/barrel_open_black",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown"
+    },
+    "facing=down,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown"
+    },
+    "facing=east,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown"
+    },
+    "facing=north,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown"
+    },
+    "facing=south,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown",
+      "y": 180
+    },
+    "facing=south,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown",
+      "y": 180
+    },
+    "facing=up,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown",
+      "x": 180
+    },
+    "facing=up,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown",
+      "x": 180
+    },
+    "facing=west,open=false,color=brown": {
+      "model": "minecraft:block/barrel_brown",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=brown": {
+      "model": "minecraft:block/barrel_open_brown",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=red": {
+      "model": "minecraft:block/barrel_red"
+    },
+    "facing=down,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red"
+    },
+    "facing=east,open=false,color=red": {
+      "model": "minecraft:block/barrel_red",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=red": {
+      "model": "minecraft:block/barrel_red"
+    },
+    "facing=north,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red"
+    },
+    "facing=south,open=false,color=red": {
+      "model": "minecraft:block/barrel_red",
+      "y": 180
+    },
+    "facing=south,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red",
+      "y": 180
+    },
+    "facing=up,open=false,color=red": {
+      "model": "minecraft:block/barrel_red",
+      "x": 180
+    },
+    "facing=up,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red",
+      "x": 180
+    },
+    "facing=west,open=false,color=red": {
+      "model": "minecraft:block/barrel_red",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=red": {
+      "model": "minecraft:block/barrel_open_red",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange"
+    },
+    "facing=down,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange"
+    },
+    "facing=east,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange"
+    },
+    "facing=north,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange"
+    },
+    "facing=south,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange",
+      "y": 180
+    },
+    "facing=south,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange",
+      "y": 180
+    },
+    "facing=up,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange",
+      "x": 180
+    },
+    "facing=up,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange",
+      "x": 180
+    },
+    "facing=west,open=false,color=orange": {
+      "model": "minecraft:block/barrel_orange",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=orange": {
+      "model": "minecraft:block/barrel_open_orange",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow"
+    },
+    "facing=down,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow"
+    },
+    "facing=east,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow"
+    },
+    "facing=north,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow"
+    },
+    "facing=south,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow",
+      "y": 180
+    },
+    "facing=south,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow",
+      "y": 180
+    },
+    "facing=up,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow",
+      "x": 180
+    },
+    "facing=up,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow",
+      "x": 180
+    },
+    "facing=west,open=false,color=yellow": {
+      "model": "minecraft:block/barrel_yellow",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=yellow": {
+      "model": "minecraft:block/barrel_open_yellow",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime"
+    },
+    "facing=down,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime"
+    },
+    "facing=east,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime"
+    },
+    "facing=north,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime"
+    },
+    "facing=south,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime",
+      "y": 180
+    },
+    "facing=south,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime",
+      "y": 180
+    },
+    "facing=up,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime",
+      "x": 180
+    },
+    "facing=up,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime",
+      "x": 180
+    },
+    "facing=west,open=false,color=lime": {
+      "model": "minecraft:block/barrel_lime",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=lime": {
+      "model": "minecraft:block/barrel_open_lime",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=green": {
+      "model": "minecraft:block/barrel_green"
+    },
+    "facing=down,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green"
+    },
+    "facing=east,open=false,color=green": {
+      "model": "minecraft:block/barrel_green",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=green": {
+      "model": "minecraft:block/barrel_green"
+    },
+    "facing=north,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green"
+    },
+    "facing=south,open=false,color=green": {
+      "model": "minecraft:block/barrel_green",
+      "y": 180
+    },
+    "facing=south,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green",
+      "y": 180
+    },
+    "facing=up,open=false,color=green": {
+      "model": "minecraft:block/barrel_green",
+      "x": 180
+    },
+    "facing=up,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green",
+      "x": 180
+    },
+    "facing=west,open=false,color=green": {
+      "model": "minecraft:block/barrel_green",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=green": {
+      "model": "minecraft:block/barrel_open_green",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan"
+    },
+    "facing=down,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan"
+    },
+    "facing=east,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan"
+    },
+    "facing=north,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan"
+    },
+    "facing=south,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan",
+      "y": 180
+    },
+    "facing=south,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan",
+      "y": 180
+    },
+    "facing=up,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan",
+      "x": 180
+    },
+    "facing=up,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan",
+      "x": 180
+    },
+    "facing=west,open=false,color=cyan": {
+      "model": "minecraft:block/barrel_cyan",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=cyan": {
+      "model": "minecraft:block/barrel_open_cyan",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue"
+    },
+    "facing=down,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue"
+    },
+    "facing=east,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue"
+    },
+    "facing=north,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue"
+    },
+    "facing=south,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue",
+      "y": 180
+    },
+    "facing=south,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue",
+      "y": 180
+    },
+    "facing=up,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue",
+      "x": 180
+    },
+    "facing=up,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue",
+      "x": 180
+    },
+    "facing=west,open=false,color=light_blue": {
+      "model": "minecraft:block/barrel_light_blue",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=light_blue": {
+      "model": "minecraft:block/barrel_open_light_blue",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue"
+    },
+    "facing=down,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue"
+    },
+    "facing=east,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue"
+    },
+    "facing=north,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue"
+    },
+    "facing=south,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue",
+      "y": 180
+    },
+    "facing=south,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue",
+      "y": 180
+    },
+    "facing=up,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue",
+      "x": 180
+    },
+    "facing=up,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue",
+      "x": 180
+    },
+    "facing=west,open=false,color=blue": {
+      "model": "minecraft:block/barrel_blue",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=blue": {
+      "model": "minecraft:block/barrel_open_blue",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple"
+    },
+    "facing=down,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple"
+    },
+    "facing=east,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple"
+    },
+    "facing=north,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple"
+    },
+    "facing=south,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple",
+      "y": 180
+    },
+    "facing=south,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple",
+      "y": 180
+    },
+    "facing=up,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple",
+      "x": 180
+    },
+    "facing=up,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple",
+      "x": 180
+    },
+    "facing=west,open=false,color=purple": {
+      "model": "minecraft:block/barrel_purple",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=purple": {
+      "model": "minecraft:block/barrel_open_purple",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta"
+    },
+    "facing=down,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta"
+    },
+    "facing=east,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta"
+    },
+    "facing=north,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta"
+    },
+    "facing=south,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta",
+      "y": 180
+    },
+    "facing=south,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta",
+      "y": 180
+    },
+    "facing=up,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta",
+      "x": 180
+    },
+    "facing=up,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta",
+      "x": 180
+    },
+    "facing=west,open=false,color=magenta": {
+      "model": "minecraft:block/barrel_magenta",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=magenta": {
+      "model": "minecraft:block/barrel_open_magenta",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink"
+    },
+    "facing=down,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink"
+    },
+    "facing=east,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink"
+    },
+    "facing=north,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink"
+    },
+    "facing=south,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink",
+      "y": 180
+    },
+    "facing=south,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink",
+      "y": 180
+    },
+    "facing=up,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink",
+      "x": 180
+    },
+    "facing=up,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink",
+      "x": 180
+    },
+    "facing=west,open=false,color=pink": {
+      "model": "minecraft:block/barrel_pink",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true,color=pink": {
+      "model": "minecraft:block/barrel_open_pink",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

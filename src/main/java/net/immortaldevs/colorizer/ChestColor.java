@@ -1,8 +1,10 @@
 package net.immortaldevs.colorizer;
 
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.StringIdentifiable;
 
-public enum ChestColor {
+public enum ChestColor implements StringIdentifiable {
+    DEFAULT("default"),
     WHITE("white"),
     LIGHT_GRAY("light_gray"),
     GRAY("gray"),
@@ -60,4 +62,8 @@ public enum ChestColor {
         };
     }
 
+    @Override
+    public String asString() {
+        return name;
+    }
 }
