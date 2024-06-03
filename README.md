@@ -4,7 +4,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devs-immortal/chest-colorizer)
 ![Minecraft 1.20.5](https://img.shields.io/badge/Minecraft-1.20.6-yellowgreen)
 
-Color-code your chests to easily distinguish between different types of items stored in them. 
+Color-code your chests and barrels to easily distinguish between different types of items stored in them. 
 With this mod, you can use a variety of dyes to assign a specific color to a chest,
 making it easy to identify what's inside with just a quick glance.
 
