@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "colorizer:block/barrel_bottom_yellow",
+    "side": "colorizer:block/barrel_side_yellow",
+    "top": "colorizer:block/barrel_top_yellow"
+  }
+}
