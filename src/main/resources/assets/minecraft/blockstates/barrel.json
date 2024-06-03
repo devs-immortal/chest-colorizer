@@ -1,10 +1,12 @@
 {
   "variants": {
     "facing=down,open=false,color=default": {
-      "model": "minecraft:block/barrel"
+      "model": "minecraft:block/barrel",
+      "x": 180
     },
     "facing=down,open=true,color=default": {
-      "model": "minecraft:block/barrel_open"
+      "model": "minecraft:block/barrel_open",
+      "x": 180
     },
     "facing=east,open=false,color=default": {
       "model": "minecraft:block/barrel",
@@ -17,26 +19,28 @@
       "y": 90
     },
     "facing=north,open=false,color=default": {
-      "model": "minecraft:block/barrel"
+      "model": "minecraft:block/barrel",
+      "x": 90
     },
     "facing=north,open=true,color=default": {
-      "model": "minecraft:block/barrel_open"
+      "model": "minecraft:block/barrel_open",
+      "x": 90
     },
     "facing=south,open=false,color=default": {
       "model": "minecraft:block/barrel",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=default": {
       "model": "minecraft:block/barrel_open",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=default": {
-      "model": "minecraft:block/barrel",
-      "x": 180
+      "model": "minecraft:block/barrel"
     },
     "facing=up,open=true,color=default": {
-      "model": "minecraft:block/barrel_open",
-      "x": 180
+      "model": "minecraft:block/barrel_open"
     },
     "facing=west,open=false,color=default": {
       "model": "minecraft:block/barrel",
@@ -49,10 +53,12 @@
       "y": 270
     },
     "facing=down,open=false,color=white": {
-      "model": "minecraft:block/barrel_white"
+      "model": "minecraft:block/barrel_white",
+      "x": 180
     },
     "facing=down,open=true,color=white": {
-      "model": "minecraft:block/barrel_open_white"
+      "model": "minecraft:block/barrel_open_white",
+      "x": 180
     },
     "facing=east,open=false,color=white": {
       "model": "minecraft:block/barrel_white",
@@ -65,26 +71,28 @@
       "y": 90
     },
     "facing=north,open=false,color=white": {
-      "model": "minecraft:block/barrel_white"
+      "model": "minecraft:block/barrel_white",
+      "x": 90
     },
     "facing=north,open=true,color=white": {
-      "model": "minecraft:block/barrel_open_white"
+      "model": "minecraft:block/barrel_open_white",
+      "x": 90
     },
     "facing=south,open=false,color=white": {
       "model": "minecraft:block/barrel_white",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=white": {
       "model": "minecraft:block/barrel_open_white",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=white": {
-      "model": "minecraft:block/barrel_white",
-      "x": 180
+      "model": "minecraft:block/barrel_white"
     },
     "facing=up,open=true,color=white": {
-      "model": "minecraft:block/barrel_open_white",
-      "x": 180
+      "model": "minecraft:block/barrel_open_white"
     },
     "facing=west,open=false,color=white": {
       "model": "minecraft:block/barrel_white",
@@ -97,10 +105,12 @@
       "y": 270
     },
     "facing=down,open=false,color=light_gray": {
-      "model": "minecraft:block/barrel_light_gray"
+      "model": "minecraft:block/barrel_light_gray",
+      "x": 180
     },
     "facing=down,open=true,color=light_gray": {
-      "model": "minecraft:block/barrel_open_light_gray"
+      "model": "minecraft:block/barrel_open_light_gray",
+      "x": 180
     },
     "facing=east,open=false,color=light_gray": {
       "model": "minecraft:block/barrel_light_gray",
@@ -113,26 +123,28 @@
       "y": 90
     },
     "facing=north,open=false,color=light_gray": {
-      "model": "minecraft:block/barrel_light_gray"
+      "model": "minecraft:block/barrel_light_gray",
+      "x": 90
     },
     "facing=north,open=true,color=light_gray": {
-      "model": "minecraft:block/barrel_open_light_gray"
+      "model": "minecraft:block/barrel_open_light_gray",
+      "x": 90
     },
     "facing=south,open=false,color=light_gray": {
       "model": "minecraft:block/barrel_light_gray",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=light_gray": {
       "model": "minecraft:block/barrel_open_light_gray",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=light_gray": {
-      "model": "minecraft:block/barrel_light_gray",
-      "x": 180
+      "model": "minecraft:block/barrel_light_gray"
     },
     "facing=up,open=true,color=light_gray": {
-      "model": "minecraft:block/barrel_open_light_gray",
-      "x": 180
+      "model": "minecraft:block/barrel_open_light_gray"
     },
     "facing=west,open=false,color=light_gray": {
       "model": "minecraft:block/barrel_light_gray",
@@ -145,10 +157,12 @@
       "y": 270
     },
     "facing=down,open=false,color=gray": {
-      "model": "minecraft:block/barrel_gray"
+      "model": "minecraft:block/barrel_gray",
+      "x": 180
     },
     "facing=down,open=true,color=gray": {
-      "model": "minecraft:block/barrel_open_gray"
+      "model": "minecraft:block/barrel_open_gray",
+      "x": 180
     },
     "facing=east,open=false,color=gray": {
       "model": "minecraft:block/barrel_gray",
@@ -161,26 +175,28 @@
       "y": 90
     },
     "facing=north,open=false,color=gray": {
-      "model": "minecraft:block/barrel_gray"
+      "model": "minecraft:block/barrel_gray",
+      "x": 90
     },
     "facing=north,open=true,color=gray": {
-      "model": "minecraft:block/barrel_open_gray"
+      "model": "minecraft:block/barrel_open_gray",
+      "x": 90
     },
     "facing=south,open=false,color=gray": {
       "model": "minecraft:block/barrel_gray",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=gray": {
       "model": "minecraft:block/barrel_open_gray",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=gray": {
-      "model": "minecraft:block/barrel_gray",
-      "x": 180
+      "model": "minecraft:block/barrel_gray"
     },
     "facing=up,open=true,color=gray": {
-      "model": "minecraft:block/barrel_open_gray",
-      "x": 180
+      "model": "minecraft:block/barrel_open_gray"
     },
     "facing=west,open=false,color=gray": {
       "model": "minecraft:block/barrel_gray",
@@ -193,10 +209,12 @@
       "y": 270
     },
     "facing=down,open=false,color=black": {
-      "model": "minecraft:block/barrel_black"
+      "model": "minecraft:block/barrel_black",
+      "x": 180
     },
     "facing=down,open=true,color=black": {
-      "model": "minecraft:block/barrel_open_black"
+      "model": "minecraft:block/barrel_open_black",
+      "x": 180
     },
     "facing=east,open=false,color=black": {
       "model": "minecraft:block/barrel_black",
@@ -209,26 +227,28 @@
       "y": 90
     },
     "facing=north,open=false,color=black": {
-      "model": "minecraft:block/barrel_black"
+      "model": "minecraft:block/barrel_black",
+      "x": 90
     },
     "facing=north,open=true,color=black": {
-      "model": "minecraft:block/barrel_open_black"
+      "model": "minecraft:block/barrel_open_black",
+      "x": 90
     },
     "facing=south,open=false,color=black": {
       "model": "minecraft:block/barrel_black",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=black": {
       "model": "minecraft:block/barrel_open_black",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=black": {
-      "model": "minecraft:block/barrel_black",
-      "x": 180
+      "model": "minecraft:block/barrel_black"
     },
     "facing=up,open=true,color=black": {
-      "model": "minecraft:block/barrel_open_black",
-      "x": 180
+      "model": "minecraft:block/barrel_open_black"
     },
     "facing=west,open=false,color=black": {
       "model": "minecraft:block/barrel_black",
@@ -241,10 +261,12 @@
       "y": 270
     },
     "facing=down,open=false,color=brown": {
-      "model": "minecraft:block/barrel_brown"
+      "model": "minecraft:block/barrel_brown",
+      "x": 180
     },
     "facing=down,open=true,color=brown": {
-      "model": "minecraft:block/barrel_open_brown"
+      "model": "minecraft:block/barrel_open_brown",
+      "x": 180
     },
     "facing=east,open=false,color=brown": {
       "model": "minecraft:block/barrel_brown",
@@ -257,26 +279,28 @@
       "y": 90
     },
     "facing=north,open=false,color=brown": {
-      "model": "minecraft:block/barrel_brown"
+      "model": "minecraft:block/barrel_brown",
+      "x": 90
     },
     "facing=north,open=true,color=brown": {
-      "model": "minecraft:block/barrel_open_brown"
+      "model": "minecraft:block/barrel_open_brown",
+      "x": 90
     },
     "facing=south,open=false,color=brown": {
       "model": "minecraft:block/barrel_brown",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=brown": {
       "model": "minecraft:block/barrel_open_brown",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=brown": {
-      "model": "minecraft:block/barrel_brown",
-      "x": 180
+      "model": "minecraft:block/barrel_brown"
     },
     "facing=up,open=true,color=brown": {
-      "model": "minecraft:block/barrel_open_brown",
-      "x": 180
+      "model": "minecraft:block/barrel_open_brown"
     },
     "facing=west,open=false,color=brown": {
       "model": "minecraft:block/barrel_brown",
@@ -289,10 +313,12 @@
       "y": 270
     },
     "facing=down,open=false,color=red": {
-      "model": "minecraft:block/barrel_red"
+      "model": "minecraft:block/barrel_red",
+      "x": 180
     },
     "facing=down,open=true,color=red": {
-      "model": "minecraft:block/barrel_open_red"
+      "model": "minecraft:block/barrel_open_red",
+      "x": 180
     },
     "facing=east,open=false,color=red": {
       "model": "minecraft:block/barrel_red",
@@ -305,26 +331,28 @@
       "y": 90
     },
     "facing=north,open=false,color=red": {
-      "model": "minecraft:block/barrel_red"
+      "model": "minecraft:block/barrel_red",
+      "x": 90
     },
     "facing=north,open=true,color=red": {
-      "model": "minecraft:block/barrel_open_red"
+      "model": "minecraft:block/barrel_open_red",
+      "x": 90
     },
     "facing=south,open=false,color=red": {
       "model": "minecraft:block/barrel_red",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=red": {
       "model": "minecraft:block/barrel_open_red",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=red": {
-      "model": "minecraft:block/barrel_red",
-      "x": 180
+      "model": "minecraft:block/barrel_red"
     },
     "facing=up,open=true,color=red": {
-      "model": "minecraft:block/barrel_open_red",
-      "x": 180
+      "model": "minecraft:block/barrel_open_red"
     },
     "facing=west,open=false,color=red": {
       "model": "minecraft:block/barrel_red",
@@ -337,10 +365,12 @@
       "y": 270
     },
     "facing=down,open=false,color=orange": {
-      "model": "minecraft:block/barrel_orange"
+      "model": "minecraft:block/barrel_orange",
+      "x": 180
     },
     "facing=down,open=true,color=orange": {
-      "model": "minecraft:block/barrel_open_orange"
+      "model": "minecraft:block/barrel_open_orange",
+      "x": 180
     },
     "facing=east,open=false,color=orange": {
       "model": "minecraft:block/barrel_orange",
@@ -353,26 +383,28 @@
       "y": 90
     },
     "facing=north,open=false,color=orange": {
-      "model": "minecraft:block/barrel_orange"
+      "model": "minecraft:block/barrel_orange",
+      "x": 90
     },
     "facing=north,open=true,color=orange": {
-      "model": "minecraft:block/barrel_open_orange"
+      "model": "minecraft:block/barrel_open_orange",
+      "x": 90
     },
     "facing=south,open=false,color=orange": {
       "model": "minecraft:block/barrel_orange",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=orange": {
       "model": "minecraft:block/barrel_open_orange",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=orange": {
-      "model": "minecraft:block/barrel_orange",
-      "x": 180
+      "model": "minecraft:block/barrel_orange"
     },
     "facing=up,open=true,color=orange": {
-      "model": "minecraft:block/barrel_open_orange",
-      "x": 180
+      "model": "minecraft:block/barrel_open_orange"
     },
     "facing=west,open=false,color=orange": {
       "model": "minecraft:block/barrel_orange",
@@ -385,10 +417,12 @@
       "y": 270
     },
     "facing=down,open=false,color=yellow": {
-      "model": "minecraft:block/barrel_yellow"
+      "model": "minecraft:block/barrel_yellow",
+      "x": 180
     },
     "facing=down,open=true,color=yellow": {
-      "model": "minecraft:block/barrel_open_yellow"
+      "model": "minecraft:block/barrel_open_yellow",
+      "x": 180
     },
     "facing=east,open=false,color=yellow": {
       "model": "minecraft:block/barrel_yellow",
@@ -401,26 +435,28 @@
       "y": 90
     },
     "facing=north,open=false,color=yellow": {
-      "model": "minecraft:block/barrel_yellow"
+      "model": "minecraft:block/barrel_yellow",
+      "x": 90
     },
     "facing=north,open=true,color=yellow": {
-      "model": "minecraft:block/barrel_open_yellow"
+      "model": "minecraft:block/barrel_open_yellow",
+      "x": 90
     },
     "facing=south,open=false,color=yellow": {
       "model": "minecraft:block/barrel_yellow",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=yellow": {
       "model": "minecraft:block/barrel_open_yellow",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=yellow": {
-      "model": "minecraft:block/barrel_yellow",
-      "x": 180
+      "model": "minecraft:block/barrel_yellow"
     },
     "facing=up,open=true,color=yellow": {
-      "model": "minecraft:block/barrel_open_yellow",
-      "x": 180
+      "model": "minecraft:block/barrel_open_yellow"
     },
     "facing=west,open=false,color=yellow": {
       "model": "minecraft:block/barrel_yellow",
@@ -433,10 +469,12 @@
       "y": 270
     },
     "facing=down,open=false,color=lime": {
-      "model": "minecraft:block/barrel_lime"
+      "model": "minecraft:block/barrel_lime",
+      "x": 180
     },
     "facing=down,open=true,color=lime": {
-      "model": "minecraft:block/barrel_open_lime"
+      "model": "minecraft:block/barrel_open_lime",
+      "x": 180
     },
     "facing=east,open=false,color=lime": {
       "model": "minecraft:block/barrel_lime",
@@ -449,26 +487,28 @@
       "y": 90
     },
     "facing=north,open=false,color=lime": {
-      "model": "minecraft:block/barrel_lime"
+      "model": "minecraft:block/barrel_lime",
+      "x": 90
     },
     "facing=north,open=true,color=lime": {
-      "model": "minecraft:block/barrel_open_lime"
+      "model": "minecraft:block/barrel_open_lime",
+      "x": 90
     },
     "facing=south,open=false,color=lime": {
       "model": "minecraft:block/barrel_lime",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=lime": {
       "model": "minecraft:block/barrel_open_lime",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=lime": {
-      "model": "minecraft:block/barrel_lime",
-      "x": 180
+      "model": "minecraft:block/barrel_lime"
     },
     "facing=up,open=true,color=lime": {
-      "model": "minecraft:block/barrel_open_lime",
-      "x": 180
+      "model": "minecraft:block/barrel_open_lime"
     },
     "facing=west,open=false,color=lime": {
       "model": "minecraft:block/barrel_lime",
@@ -481,10 +521,12 @@
       "y": 270
     },
     "facing=down,open=false,color=green": {
-      "model": "minecraft:block/barrel_green"
+      "model": "minecraft:block/barrel_green",
+      "x": 180
     },
     "facing=down,open=true,color=green": {
-      "model": "minecraft:block/barrel_open_green"
+      "model": "minecraft:block/barrel_open_green",
+      "x": 180
     },
     "facing=east,open=false,color=green": {
       "model": "minecraft:block/barrel_green",
@@ -497,26 +539,28 @@
       "y": 90
     },
     "facing=north,open=false,color=green": {
-      "model": "minecraft:block/barrel_green"
+      "model": "minecraft:block/barrel_green",
+      "x": 90
     },
     "facing=north,open=true,color=green": {
-      "model": "minecraft:block/barrel_open_green"
+      "model": "minecraft:block/barrel_open_green",
+      "x": 90
     },
     "facing=south,open=false,color=green": {
       "model": "minecraft:block/barrel_green",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=green": {
       "model": "minecraft:block/barrel_open_green",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=green": {
-      "model": "minecraft:block/barrel_green",
-      "x": 180
+      "model": "minecraft:block/barrel_green"
     },
     "facing=up,open=true,color=green": {
-      "model": "minecraft:block/barrel_open_green",
-      "x": 180
+      "model": "minecraft:block/barrel_open_green"
     },
     "facing=west,open=false,color=green": {
       "model": "minecraft:block/barrel_green",
@@ -529,10 +573,12 @@
       "y": 270
     },
     "facing=down,open=false,color=cyan": {
-      "model": "minecraft:block/barrel_cyan"
+      "model": "minecraft:block/barrel_cyan",
+      "x": 180
     },
     "facing=down,open=true,color=cyan": {
-      "model": "minecraft:block/barrel_open_cyan"
+      "model": "minecraft:block/barrel_open_cyan",
+      "x": 180
     },
     "facing=east,open=false,color=cyan": {
       "model": "minecraft:block/barrel_cyan",
@@ -545,26 +591,28 @@
       "y": 90
     },
     "facing=north,open=false,color=cyan": {
-      "model": "minecraft:block/barrel_cyan"
+      "model": "minecraft:block/barrel_cyan",
+      "x": 90
     },
     "facing=north,open=true,color=cyan": {
-      "model": "minecraft:block/barrel_open_cyan"
+      "model": "minecraft:block/barrel_open_cyan",
+      "x": 90
     },
     "facing=south,open=false,color=cyan": {
       "model": "minecraft:block/barrel_cyan",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=cyan": {
       "model": "minecraft:block/barrel_open_cyan",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=cyan": {
-      "model": "minecraft:block/barrel_cyan",
-      "x": 180
+      "model": "minecraft:block/barrel_cyan"
     },
     "facing=up,open=true,color=cyan": {
-      "model": "minecraft:block/barrel_open_cyan",
-      "x": 180
+      "model": "minecraft:block/barrel_open_cyan"
     },
     "facing=west,open=false,color=cyan": {
       "model": "minecraft:block/barrel_cyan",
@@ -577,10 +625,12 @@
       "y": 270
     },
     "facing=down,open=false,color=light_blue": {
-      "model": "minecraft:block/barrel_light_blue"
+      "model": "minecraft:block/barrel_light_blue",
+      "x": 180
     },
     "facing=down,open=true,color=light_blue": {
-      "model": "minecraft:block/barrel_open_light_blue"
+      "model": "minecraft:block/barrel_open_light_blue",
+      "x": 180
     },
     "facing=east,open=false,color=light_blue": {
       "model": "minecraft:block/barrel_light_blue",
@@ -593,26 +643,28 @@
       "y": 90
     },
     "facing=north,open=false,color=light_blue": {
-      "model": "minecraft:block/barrel_light_blue"
+      "model": "minecraft:block/barrel_light_blue",
+      "x": 90
     },
     "facing=north,open=true,color=light_blue": {
-      "model": "minecraft:block/barrel_open_light_blue"
+      "model": "minecraft:block/barrel_open_light_blue",
+      "x": 90
     },
     "facing=south,open=false,color=light_blue": {
       "model": "minecraft:block/barrel_light_blue",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=light_blue": {
       "model": "minecraft:block/barrel_open_light_blue",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=light_blue": {
-      "model": "minecraft:block/barrel_light_blue",
-      "x": 180
+      "model": "minecraft:block/barrel_light_blue"
     },
     "facing=up,open=true,color=light_blue": {
-      "model": "minecraft:block/barrel_open_light_blue",
-      "x": 180
+      "model": "minecraft:block/barrel_open_light_blue"
     },
     "facing=west,open=false,color=light_blue": {
       "model": "minecraft:block/barrel_light_blue",
@@ -625,10 +677,12 @@
       "y": 270
     },
     "facing=down,open=false,color=blue": {
-      "model": "minecraft:block/barrel_blue"
+      "model": "minecraft:block/barrel_blue",
+      "x": 180
     },
     "facing=down,open=true,color=blue": {
-      "model": "minecraft:block/barrel_open_blue"
+      "model": "minecraft:block/barrel_open_blue",
+      "x": 180
     },
     "facing=east,open=false,color=blue": {
       "model": "minecraft:block/barrel_blue",
@@ -641,26 +695,28 @@
       "y": 90
     },
     "facing=north,open=false,color=blue": {
-      "model": "minecraft:block/barrel_blue"
+      "model": "minecraft:block/barrel_blue",
+      "x": 90
     },
     "facing=north,open=true,color=blue": {
-      "model": "minecraft:block/barrel_open_blue"
+      "model": "minecraft:block/barrel_open_blue",
+      "x": 90
     },
     "facing=south,open=false,color=blue": {
       "model": "minecraft:block/barrel_blue",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=blue": {
       "model": "minecraft:block/barrel_open_blue",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=blue": {
-      "model": "minecraft:block/barrel_blue",
-      "x": 180
+      "model": "minecraft:block/barrel_blue"
     },
     "facing=up,open=true,color=blue": {
-      "model": "minecraft:block/barrel_open_blue",
-      "x": 180
+      "model": "minecraft:block/barrel_open_blue"
     },
     "facing=west,open=false,color=blue": {
       "model": "minecraft:block/barrel_blue",
@@ -673,10 +729,12 @@
       "y": 270
     },
     "facing=down,open=false,color=purple": {
-      "model": "minecraft:block/barrel_purple"
+      "model": "minecraft:block/barrel_purple",
+      "x": 180
     },
     "facing=down,open=true,color=purple": {
-      "model": "minecraft:block/barrel_open_purple"
+      "model": "minecraft:block/barrel_open_purple",
+      "x": 180
     },
     "facing=east,open=false,color=purple": {
       "model": "minecraft:block/barrel_purple",
@@ -689,26 +747,28 @@
       "y": 90
     },
     "facing=north,open=false,color=purple": {
-      "model": "minecraft:block/barrel_purple"
+      "model": "minecraft:block/barrel_purple",
+      "x": 90
     },
     "facing=north,open=true,color=purple": {
-      "model": "minecraft:block/barrel_open_purple"
+      "model": "minecraft:block/barrel_open_purple",
+      "x": 90
     },
     "facing=south,open=false,color=purple": {
       "model": "minecraft:block/barrel_purple",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=purple": {
       "model": "minecraft:block/barrel_open_purple",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=purple": {
-      "model": "minecraft:block/barrel_purple",
-      "x": 180
+      "model": "minecraft:block/barrel_purple"
     },
     "facing=up,open=true,color=purple": {
-      "model": "minecraft:block/barrel_open_purple",
-      "x": 180
+      "model": "minecraft:block/barrel_open_purple"
     },
     "facing=west,open=false,color=purple": {
       "model": "minecraft:block/barrel_purple",
@@ -721,10 +781,12 @@
       "y": 270
     },
     "facing=down,open=false,color=magenta": {
-      "model": "minecraft:block/barrel_magenta"
+      "model": "minecraft:block/barrel_magenta",
+      "x": 180
     },
     "facing=down,open=true,color=magenta": {
-      "model": "minecraft:block/barrel_open_magenta"
+      "model": "minecraft:block/barrel_open_magenta",
+      "x": 180
     },
     "facing=east,open=false,color=magenta": {
       "model": "minecraft:block/barrel_magenta",
@@ -737,26 +799,28 @@
       "y": 90
     },
     "facing=north,open=false,color=magenta": {
-      "model": "minecraft:block/barrel_magenta"
+      "model": "minecraft:block/barrel_magenta",
+      "x": 90
     },
     "facing=north,open=true,color=magenta": {
-      "model": "minecraft:block/barrel_open_magenta"
+      "model": "minecraft:block/barrel_open_magenta",
+      "x": 90
     },
     "facing=south,open=false,color=magenta": {
       "model": "minecraft:block/barrel_magenta",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=magenta": {
       "model": "minecraft:block/barrel_open_magenta",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=magenta": {
-      "model": "minecraft:block/barrel_magenta",
-      "x": 180
+      "model": "minecraft:block/barrel_magenta"
     },
     "facing=up,open=true,color=magenta": {
-      "model": "minecraft:block/barrel_open_magenta",
-      "x": 180
+      "model": "minecraft:block/barrel_open_magenta"
     },
     "facing=west,open=false,color=magenta": {
       "model": "minecraft:block/barrel_magenta",
@@ -769,10 +833,12 @@
       "y": 270
     },
     "facing=down,open=false,color=pink": {
-      "model": "minecraft:block/barrel_pink"
+      "model": "minecraft:block/barrel_pink",
+      "x": 180
     },
     "facing=down,open=true,color=pink": {
-      "model": "minecraft:block/barrel_open_pink"
+      "model": "minecraft:block/barrel_open_pink",
+      "x": 180
     },
     "facing=east,open=false,color=pink": {
       "model": "minecraft:block/barrel_pink",
@@ -785,26 +851,28 @@
       "y": 90
     },
     "facing=north,open=false,color=pink": {
-      "model": "minecraft:block/barrel_pink"
+      "model": "minecraft:block/barrel_pink",
+      "x": 90
     },
     "facing=north,open=true,color=pink": {
-      "model": "minecraft:block/barrel_open_pink"
+      "model": "minecraft:block/barrel_open_pink",
+      "x": 90
     },
     "facing=south,open=false,color=pink": {
       "model": "minecraft:block/barrel_pink",
+      "x": 90,
       "y": 180
     },
     "facing=south,open=true,color=pink": {
       "model": "minecraft:block/barrel_open_pink",
+      "x": 90,
       "y": 180
     },
     "facing=up,open=false,color=pink": {
-      "model": "minecraft:block/barrel_pink",
-      "x": 180
+      "model": "minecraft:block/barrel_pink"
     },
     "facing=up,open=true,color=pink": {
-      "model": "minecraft:block/barrel_open_pink",
-      "x": 180
+      "model": "minecraft:block/barrel_open_pink"
     },
     "facing=west,open=false,color=pink": {
       "model": "minecraft:block/barrel_pink",
