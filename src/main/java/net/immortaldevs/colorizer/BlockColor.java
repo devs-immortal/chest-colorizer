@@ -3,7 +3,7 @@ package net.immortaldevs.colorizer;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.StringIdentifiable;
 
-public enum ChestColor implements StringIdentifiable {
+public enum BlockColor implements StringIdentifiable {
     DEFAULT("default"),
     WHITE("white"),
     LIGHT_GRAY("light_gray"),
@@ -24,7 +24,7 @@ public enum ChestColor implements StringIdentifiable {
 
     private final String name;
 
-    ChestColor(String name) {
+    BlockColor(String name) {
         this.name = name;
     }
 
@@ -32,8 +32,8 @@ public enum ChestColor implements StringIdentifiable {
         return name;
     }
 
-    public static ChestColor fromName(String name) {
-        for (ChestColor color : values()) {
+    public static BlockColor fromName(String name) {
+        for (BlockColor color : values()) {
             if (color.getName().equals(name)) {
                 return color;
             }
@@ -41,7 +41,7 @@ public enum ChestColor implements StringIdentifiable {
         return null;
     }
 
-    public static ChestColor fromDyeColor(DyeColor color) {
+    public static BlockColor fromDyeColor(DyeColor color) {
         return switch (color) {
             case WHITE -> WHITE;
             case LIGHT_GRAY -> LIGHT_GRAY;

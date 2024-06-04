@@ -1,6 +1,7 @@
 package net.immortaldevs.colorizer;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;

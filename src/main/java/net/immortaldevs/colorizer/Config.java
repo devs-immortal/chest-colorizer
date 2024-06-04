@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class Config {
-    private static final HashMap<String, HashMap<BlockPos, ChestColor>> values = new HashMap<>();
+    private static final HashMap<String, HashMap<BlockPos, BlockColor>> values = new HashMap<>();
 
-    public static ChestColor getColor(String worldName, BlockPos position) {
+    public static BlockColor getColor(String worldName, BlockPos position) {
         if (!values.containsKey(worldName)) return null;
         return values.get(worldName).get(position);
     }
 
-    public static void setColor(String worldName, BlockPos position, ChestColor color) {
+    public static void setColor(String worldName, BlockPos position, BlockColor color) {
         if (!values.containsKey(worldName)) values.put(worldName, new HashMap<>());
         values.get(worldName).put(position, color);
         save();
@@ -78,7 +78,7 @@ public class Config {
             int z = Integer.parseInt(parts[3]);
             String color = parts[4];
             if (!values.containsKey(worldName)) values.put(worldName, new HashMap<>());
-            values.get(worldName).put(new BlockPos(x, y, z), ChestColor.fromName(color));
+            values.get(worldName).put(new BlockPos(x, y, z), BlockColor.fromName(color));
         }
     }
 }

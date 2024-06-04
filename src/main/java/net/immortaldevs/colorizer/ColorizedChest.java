@@ -66,7 +66,7 @@ public class ColorizedChest {
     public static SpriteIdentifier getColorizedTextureId(BlockEntity entity, ChestType type) {
         String worldName = getLevelName();
         if (worldName == null) return null;
-        ChestColor color = getChestColor(worldName, entity, type);
+        BlockColor color = getChestColor(worldName, entity, type);
         if (color == null) return null;
         return switch (color) {
             case WHITE -> getColorizedTextureId(type, WHITE, WHITE_LEFT, WHITE_RIGHT);
@@ -97,16 +97,16 @@ public class ColorizedChest {
         };
     }
 
-    public static ChestColor getColor(BlockPos pos) {
+    public static BlockColor getColor(BlockPos pos) {
         String worldName = getLevelName();
-        ChestColor color = Config.getColor(worldName, pos);
-        if (color == null) return ChestColor.DEFAULT;
+        BlockColor color = Config.getColor(worldName, pos);
+        if (color == null) return BlockColor.DEFAULT;
         return color;
     }
 
     public static void updateColor(BlockPos pos, DyeItem dyeItem) {
         String worldName = getLevelName();
-        Config.setColor(worldName, pos, ChestColor.fromDyeColor(dyeItem.getColor()));
+        Config.setColor(worldName, pos, BlockColor.fromDyeColor(dyeItem.getColor()));
     }
 
     public static void clearColor(BlockPos pos) {
@@ -128,8 +128,8 @@ public class ColorizedChest {
         }
     }
 
-    private static ChestColor getChestColor(String worldName, BlockEntity entity, ChestType type) {
-        ChestColor color = Config.getColor(worldName, entity.getPos());
+    private static BlockColor getChestColor(String worldName, BlockEntity entity, ChestType type) {
+        BlockColor color = Config.getColor(worldName, entity.getPos());
         if (color == null) {
             Direction chestDirection = entity.getCachedState().get(ChestBlock.FACING);
             if (type == ChestType.LEFT) {
