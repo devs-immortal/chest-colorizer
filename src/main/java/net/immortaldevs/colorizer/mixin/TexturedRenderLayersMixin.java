@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static net.immortaldevs.colorizer.ColorizedChest.getColorizedTextureId;
+import static net.immortaldevs.colorizer.ColorManager.getColorizedTextureId;
 import static net.minecraft.client.render.TexturedRenderLayers.*;
 
 @Mixin(TexturedRenderLayers.class)

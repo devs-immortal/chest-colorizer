@@ -13,7 +13,7 @@ import net.minecraft.util.math.Direction;
 
 import static net.minecraft.client.render.TexturedRenderLayers.CHEST_ATLAS_TEXTURE;
 
-public class ColorizedChest {
+public class ColorManager {
     public static final SpriteIdentifier WHITE = createChestTextureId("white");
     public static final SpriteIdentifier WHITE_LEFT = createChestTextureId("white_left");
     public static final SpriteIdentifier WHITE_RIGHT = createChestTextureId("white_right");

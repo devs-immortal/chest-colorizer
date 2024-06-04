@@ -1,8 +1,8 @@
 package net.immortaldevs.colorizer.mixin;
 
 import net.immortaldevs.colorizer.BlockColor;
+import net.immortaldevs.colorizer.ColorManager;
 import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
-import net.immortaldevs.colorizer.ColorizedChest;
 import net.immortaldevs.colorizer.ColorizerMod;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
@@ -23,7 +23,7 @@ public class ChunkBuilderMixin {
     public BlockState modifyBlockState(ChunkRendererRegion instance, BlockPos pos) {
         BlockState state = instance.getBlockState(pos);
         if (state.getBlock() == Blocks.BARREL) {
-            BlockColor color = ColorizedChest.getColor(pos);
+            BlockColor color = ColorManager.getColor(pos);
             return ColorizerMod.BARREL_BLOCK.getDefaultState()
                     .with(ColorizedBarrelBlock.COLOR, color)
                     .with(BarrelBlock.FACING, state.get(BarrelBlock.FACING))

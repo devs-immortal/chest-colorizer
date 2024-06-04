@@ -1,6 +1,6 @@
 package net.immortaldevs.colorizer.mixin;
 
-import net.immortaldevs.colorizer.ColorizedChest;
+import net.immortaldevs.colorizer.ColorManager;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,7 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin {
     @Inject(at = @At("HEAD"), method = "onBroken(Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V")
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state, CallbackInfo info) {
-        if ((Object) this instanceof ChestBlock) ColorizedChest.clearChestColor(pos, state);
-        if ((Object) this instanceof BarrelBlock) ColorizedChest.clearColor(pos);
+        final Block block = (Block) (Object) this;
+        if (block instanceof ChestBlock) ColorManager.clearChestColor(pos, state);
+        if (block instanceof BarrelBlock) ColorManager.clearColor(pos);
     }
 }
