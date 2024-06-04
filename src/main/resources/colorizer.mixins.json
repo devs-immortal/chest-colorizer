@@ -5,9 +5,9 @@
   "compatibilityLevel": "JAVA_21",
   "client": [
     "BlockMixin",
-    "BarrelBlockMixin",
     "ItemMixin",
-    "TexturedRenderLayersMixin"
+    "TexturedRenderLayersMixin",
+    "ChunkBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -3,7 +3,6 @@ package net.immortaldevs.colorizer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.ChestType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.SpriteIdentifier;
@@ -67,7 +66,7 @@ public class ColorizedChest {
     public static SpriteIdentifier getColorizedTextureId(BlockEntity entity, ChestType type) {
         String worldName = getLevelName();
         if (worldName == null) return null;
-        ChestColor color = getColor(worldName, entity, type);
+        ChestColor color = getChestColor(worldName, entity, type);
         if (color == null) return null;
         return switch (color) {
             case WHITE -> getColorizedTextureId(type, WHITE, WHITE_LEFT, WHITE_RIGHT);
@@ -98,9 +97,21 @@ public class ColorizedChest {
         };
     }
 
-    public static void updateChestColor(BlockPos pos, DyeItem dyeItem) {
+    public static ChestColor getColor(BlockPos pos) {
+        String worldName = getLevelName();
+        ChestColor color = Config.getColor(worldName, pos);
+        if (color == null) return ChestColor.DEFAULT;
+        return color;
+    }
+
+    public static void updateColor(BlockPos pos, DyeItem dyeItem) {
         String worldName = getLevelName();
         Config.setColor(worldName, pos, ChestColor.fromDyeColor(dyeItem.getColor()));
+    }
+
+    public static void clearColor(BlockPos pos) {
+        String worldName = getLevelName();
+        Config.removeColor(worldName, pos);
     }
 
     public static void clearChestColor(BlockPos pos, BlockState state) {
@@ -117,7 +128,7 @@ public class ColorizedChest {
         }
     }
 
-    private static ChestColor getColor(String worldName, BlockEntity entity, ChestType type) {
+    private static ChestColor getChestColor(String worldName, BlockEntity entity, ChestType type) {
         ChestColor color = Config.getColor(worldName, entity.getPos());
         if (color == null) {
             Direction chestDirection = entity.getCachedState().get(ChestBlock.FACING);
@@ -144,6 +155,6 @@ public class ColorizedChest {
     }
 
     private static SpriteIdentifier createChestTextureId(String variant) {
-        return new SpriteIdentifier(CHEST_ATLAS_TEXTURE, new Identifier("colorizer", "entity/chest/" + variant));
+        return new SpriteIdentifier(CHEST_ATLAS_TEXTURE, new Identifier(ColorizerMod.MOD_ID, "entity/chest/" + variant));
     }
 }

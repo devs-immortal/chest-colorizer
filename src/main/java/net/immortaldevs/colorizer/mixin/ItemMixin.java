@@ -1,8 +1,6 @@
 package net.immortaldevs.colorizer.mixin;
 
-import net.immortaldevs.colorizer.ChestColor;
 import net.immortaldevs.colorizer.ColorizedChest;
-import net.immortaldevs.colorizer.ColorizerMod;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -27,17 +25,22 @@ public class ItemMixin {
 
         if (blockEntity instanceof ChestBlockEntity) {
             if (item instanceof DyeItem)
-                ColorizedChest.updateChestColor(blockPos, (DyeItem) item);
+                ColorizedChest.updateColor(blockPos, (DyeItem) item);
             else if (item == Items.PAPER)
                 ColorizedChest.clearChestColor(blockPos, blockEntity.getCachedState());
         }
 
         BlockState blockState = context.getWorld().getBlockState(blockPos);
         if (blockState.getBlock() instanceof BarrelBlock) {
+            blockState = blockState.with(BarrelBlock.OPEN, true);
+            world.setBlockState(blockPos, blockState);
+
             if (item instanceof DyeItem)
-                blockState = blockState.with(ColorizerMod.COLOR, ChestColor.fromDyeColor(((DyeItem) item).getColor()));
+                ColorizedChest.updateColor(blockPos, (DyeItem) item);
             else if (item == Items.PAPER)
-                blockState = blockState.with(ColorizerMod.COLOR, ChestColor.DEFAULT);
+                ColorizedChest.clearColor(blockPos);
+
+            blockState = blockState.with(BarrelBlock.OPEN, false);
             world.setBlockState(blockPos, blockState);
         }
     }
