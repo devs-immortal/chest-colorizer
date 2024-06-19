@@ -7,7 +7,7 @@
     "BlockMixin",
     "ItemMixin",
     "TexturedRenderLayersMixin",
-    "ChunkBuilderMixin"
+    "SectionBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

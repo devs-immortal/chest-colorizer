@@ -14,7 +14,7 @@ public class ColorizerMod implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "barrel"), BARREL_BLOCK);
+		Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, "barrel"), BARREL_BLOCK);
 		Config.load();
 	}
 }

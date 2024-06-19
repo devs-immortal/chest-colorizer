@@ -155,6 +155,6 @@ public class ColorManager {
     }
 
     private static SpriteIdentifier createChestTextureId(String variant) {
-        return new SpriteIdentifier(CHEST_ATLAS_TEXTURE, new Identifier(ColorizerMod.MOD_ID, "entity/chest/" + variant));
+        return new SpriteIdentifier(CHEST_ATLAS_TEXTURE, Identifier.of(ColorizerMod.MOD_ID, "entity/chest/" + variant));
     }
 }
