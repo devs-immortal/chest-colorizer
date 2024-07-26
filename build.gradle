@@ -8,6 +8,7 @@ group = project.maven_group
 
 repositories {
 	maven { url "https://maven.terraformersmc.com/" }
+	maven { url "https://api.modrinth.com/maven" }
 }
 
 dependencies {
@@ -19,6 +20,7 @@ dependencies {
 	modImplementation ("com.terraformersmc:modmenu:${project.modmenu_version}") {
 		exclude module: "fabric-api"
 	}
+	modCompileOnly "maven.modrinth:sodium:${project.sodium_version}"
 }
 
 base {
