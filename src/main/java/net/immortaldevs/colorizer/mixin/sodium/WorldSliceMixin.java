@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = WorldSlice.class, remap = false)
+@Mixin(value = WorldSlice.class)
 public class WorldSliceMixin {
 
     @Inject(method = "getBlockState(III)Lnet/minecraft/block/BlockState;", at = @At(value = "RETURN"),cancellable = true)
