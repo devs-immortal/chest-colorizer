@@ -1,6 +1,6 @@
 package net.immortaldevs.colorizer.mixin.sodium;
 
-import me.jellysquid.mods.sodium.client.world.WorldSlice;
+import net.caffeinemc.mods.sodium.client.world.LevelSlice;
 import net.immortaldevs.colorizer.BlockColor;
 import net.immortaldevs.colorizer.ColorManager;
 import net.immortaldevs.colorizer.ColorizerMod;
@@ -14,15 +14,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = WorldSlice.class)
+@Mixin(value = LevelSlice.class)
 public class WorldSliceMixin {
 
-    @Inject(method = "getBlockState(III)Lnet/minecraft/block/BlockState;", at = @At(value = "RETURN"),cancellable = true)
+    @Inject(method = "getBlockState(III)Lnet/minecraft/block/BlockState;", at = @At(value = "RETURN"), cancellable = true)
     public void modifyBlockState(int x, int y, int z, CallbackInfoReturnable<BlockState> cir) {
         BlockState state = cir.getReturnValue();
         if (state != null) {
             if (state.getBlock() == Blocks.BARREL) {
-                BlockColor color = ColorManager.getColor(new BlockPos(x,y,z));
+                BlockColor color = ColorManager.getColor(new BlockPos(x, y, z));
                 state = ColorizerMod.BARREL_BLOCK.getDefaultState()
                         .with(ColorizedBarrelBlock.COLOR, color)
                         .with(BarrelBlock.FACING, state.get(BarrelBlock.FACING))
