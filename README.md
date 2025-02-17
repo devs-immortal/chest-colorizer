@@ -2,7 +2,7 @@
 
 ![Code license (MIT)](https://img.shields.io/github/license/devs-immortal/chest-colorizer)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devs-immortal/chest-colorizer)
-![Minecraft 1.21.3](https://img.shields.io/badge/Minecraft-1.21.3-yellowgreen)
+![Minecraft 1.21.4](https://img.shields.io/badge/Minecraft-1.21.4-yellowgreen)
 
 Color-code your chests and barrels to easily distinguish between different types of items stored in them. 
 With this mod, you can use a variety of dyes to assign a specific color to a chest,
@@ -10,7 +10,7 @@ making it easy to identify what's inside with just a quick glance.
 
 ## Installation
 
-1. Download and install [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.21.3.
+1. Download and install [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.21.4.
 2. Download Chest Colorizer mods.
 3. Place the downloaded mod file in the "mods" folder located in your Minecraft game directory.
 4. Launch Minecraft with the Fabric mod loader and enjoy the mod!
@@ -25,7 +25,7 @@ making it easy to identify what's inside with just a quick glance.
 
 ## Feedback and Support
 
-[![Discord](https://img.shields.io/discord/770691727568404521.svg?logoColor=FFFFFF&logo=discord&color=7289DA)](https://discord.com/invite/wmMa47n)
+[![Discord](https://img.shields.io/discord/770691727568404521.svg?logoColor=FFFFFF&logo=discord&color=7289DA)](https://discord.com/invite/TvuNtNYEvr)
 
 If you encounter any issues while using the BindCommands mod or have any suggestions for improvement,
-please feel free to open an issue on the mod's [GitHub page](https://github.com/devs-immortal/chest-colorizer/issues) or visit [our Discord](https://discord.com/invite/wmMa47n). We appreciate any and all feedback!
+please feel free to open an issue on the mod's [GitHub page](https://github.com/devs-immortal/chest-colorizer/issues) or visit [our Discord](https://discord.com/invite/TvuNtNYEvr). We appreciate any and all feedback!
