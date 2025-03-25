@@ -20,9 +20,9 @@ public class TexturedRenderLayersMixin {
     @Inject(at = @At("HEAD"), cancellable = true, method = "getChestTextureId(Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/block/enums/ChestType;Z)Lnet/minecraft/client/util/SpriteIdentifier;")
     private static void getChestTexture(BlockEntity blockEntity, ChestType type, boolean christmas, CallbackInfoReturnable<SpriteIdentifier> cir) {
         if (blockEntity instanceof EnderChestBlockEntity) {
-            cir.setReturnValue(ENDER);
+            cir.setReturnValue(ENDER_CHEST);
         } else if (blockEntity instanceof TrappedChestBlockEntity) {
-            cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS, CHRISTMAS_LEFT, CHRISTMAS_RIGHT) : getChestTextureId(type, TRAPPED, TRAPPED_LEFT, TRAPPED_RIGHT));
+            cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS_CHEST, CHRISTMAS_CHEST_LEFT, CHRISTMAS_CHEST_RIGHT) : getChestTextureId(type, TRAPPED_CHEST, TRAPPED_CHEST_LEFT, TRAPPED_CHEST_RIGHT));
         } else {
             World world = blockEntity.getWorld();
             if (world != null) {
@@ -30,9 +30,9 @@ public class TexturedRenderLayersMixin {
                 if (identifier != null)
                     cir.setReturnValue(getColorizedTextureId(blockEntity, type));
                 else
-                    cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS, CHRISTMAS_LEFT, CHRISTMAS_RIGHT) : getChestTextureId(type, NORMAL, NORMAL_LEFT, NORMAL_RIGHT));
+                    cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS_CHEST, CHRISTMAS_CHEST_LEFT, CHRISTMAS_CHEST_RIGHT) : getChestTextureId(type, CHEST, CHEST_LEFT, CHEST_RIGHT));
             } else {
-                cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS, CHRISTMAS_LEFT, CHRISTMAS_RIGHT) : getChestTextureId(type, NORMAL, NORMAL_LEFT, NORMAL_RIGHT));
+                cir.setReturnValue(christmas ? getChestTextureId(type, CHRISTMAS_CHEST, CHRISTMAS_CHEST_LEFT, CHRISTMAS_CHEST_RIGHT) : getChestTextureId(type, CHEST, CHEST_LEFT, CHEST_RIGHT));
             }
         }
     }
