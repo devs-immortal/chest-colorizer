@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = LevelSlice.class)
 public class WorldSliceMixin {
-
     @Inject(method = "getBlockState(III)Lnet/minecraft/block/BlockState;", at = @At(value = "RETURN"), cancellable = true)
     public void modifyBlockState(int x, int y, int z, CallbackInfoReturnable<BlockState> cir) {
         BlockState state = cir.getReturnValue();
