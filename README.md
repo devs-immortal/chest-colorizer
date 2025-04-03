@@ -29,3 +29,7 @@ making it easy to identify what's inside with just a quick glance.
 
 If you encounter any issues while using the BindCommands mod or have any suggestions for improvement,
 please feel free to open an issue on the mod's [GitHub page](https://github.com/devs-immortal/chest-colorizer/issues) or visit [our Discord](https://discord.com/invite/TvuNtNYEvr). We appreciate any and all feedback!
+
+## Compatibility
+
+Chest Colorizer has been tested to work with [Sodium](https://modrinth.com/mod/sodium). However, it is not compatible with [Enhanced Block Entities](https://modrinth.com/mod/ebe), and users have reported issues when trying to use these mods together. If you experience any compatibility problems with other mods, please [open an issue](https://github.com/devs-immortal/chest-colorizer/issues).
