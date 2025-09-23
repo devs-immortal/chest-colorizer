@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public class Config {
@@ -36,7 +37,7 @@ public class Config {
                 save();
                 return;
             }
-            deserialize(FileUtils.readFileToString(file, "UTF-8"));
+            deserialize(FileUtils.readFileToString(file, StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,8 +78,11 @@ public class Config {
             int y = Integer.parseInt(parts[2]);
             int z = Integer.parseInt(parts[3]);
             String color = parts[4];
-            if (!values.containsKey(worldName)) values.put(worldName, new HashMap<>());
-            values.get(worldName).put(new BlockPos(x, y, z), BlockColor.fromName(color));
+            values.computeIfAbsent(
+                    worldName,
+                    k -> new HashMap<>()).put(new BlockPos(x, y, z),
+                    BlockColor.fromName(color)
+            );
         }
     }
 }

@@ -2,8 +2,8 @@ package net.immortaldevs.colorizer.mixin;
 
 import net.immortaldevs.colorizer.BlockColor;
 import net.immortaldevs.colorizer.ColorManager;
-import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.immortaldevs.colorizer.ColorizerMod;
+import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

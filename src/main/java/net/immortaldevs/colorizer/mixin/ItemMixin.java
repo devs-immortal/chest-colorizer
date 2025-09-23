@@ -5,7 +5,10 @@ import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.DyeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,8 +27,8 @@ public class ItemMixin {
         BlockEntity blockEntity = world.getBlockEntity(blockPos);
 
         if (blockEntity instanceof ChestBlockEntity) {
-            if (item instanceof DyeItem)
-                ColorManager.updateColor(blockPos, (DyeItem) item);
+            if (item instanceof DyeItem dyeItem)
+                ColorManager.updateColor(blockPos, dyeItem);
             else if (item == Items.PAPER)
                 ColorManager.clearChestColor(blockPos, blockEntity.getCachedState());
             return;
@@ -36,8 +39,8 @@ public class ItemMixin {
             blockState = blockState.with(BarrelBlock.OPEN, true);
             world.setBlockState(blockPos, blockState);
 
-            if (item instanceof DyeItem)
-                ColorManager.updateColor(blockPos, (DyeItem) item);
+            if (item instanceof DyeItem dyeItem)
+                ColorManager.updateColor(blockPos, dyeItem);
             else if (item == Items.PAPER)
                 ColorManager.clearColor(blockPos);
 

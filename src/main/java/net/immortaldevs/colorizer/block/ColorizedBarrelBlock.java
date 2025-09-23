@@ -1,7 +1,9 @@
 package net.immortaldevs.colorizer.block;
 
 import net.immortaldevs.colorizer.BlockColor;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.math.Direction;

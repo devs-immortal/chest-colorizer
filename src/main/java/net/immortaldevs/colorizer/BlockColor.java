@@ -28,10 +28,6 @@ public enum BlockColor implements StringIdentifiable {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public static BlockColor fromName(String name) {
         for (BlockColor color : values()) {
             if (color.getName().equals(name)) {
@@ -60,6 +56,10 @@ public enum BlockColor implements StringIdentifiable {
             case MAGENTA -> MAGENTA;
             case PINK -> PINK;
         };
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
