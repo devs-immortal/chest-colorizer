@@ -1,6 +1,10 @@
 package net.immortaldevs.colorizer.mixin;
 
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.immortaldevs.colorizer.BlockColor;
 import net.immortaldevs.colorizer.ColorManager;
+import net.immortaldevs.colorizer.network.ClearColorPayload;
+import net.immortaldevs.colorizer.network.UpdateColorPayload;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -13,6 +17,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -28,9 +33,9 @@ public class ItemMixin {
 
         if (blockEntity instanceof ChestBlockEntity) {
             if (item instanceof DyeItem dyeItem)
-                ColorManager.updateColor(blockPos, dyeItem);
+                updateColor(world, blockPos, dyeItem);
             else if (item == Items.PAPER)
-                ColorManager.clearChestColor(blockPos, blockEntity.getCachedState());
+                clearColor(world, blockPos, blockEntity.getCachedState());
             return;
         }
 
@@ -40,12 +45,31 @@ public class ItemMixin {
             world.setBlockState(blockPos, blockState);
 
             if (item instanceof DyeItem dyeItem)
-                ColorManager.updateColor(blockPos, dyeItem);
+                updateColor(world, blockPos, dyeItem);
             else if (item == Items.PAPER)
-                ColorManager.clearColor(blockPos);
+                clearColor(world, blockPos, null);
 
             blockState = blockState.with(BarrelBlock.OPEN, false);
             world.setBlockState(blockPos, blockState);
         }
+    }
+
+    @Unique
+    private void updateColor(World world, BlockPos pos, DyeItem dyeItem) {
+        if (world.isClient()) {
+            BlockColor color = BlockColor.fromDyeColor(dyeItem.getColor());
+            UpdateColorPayload payload = new UpdateColorPayload(pos, color);
+            ClientPlayNetworking.send(payload);
+        }
+        ColorManager.updateColor(pos, dyeItem);
+    }
+
+    @Unique
+    private void clearColor(World world, BlockPos pos, BlockState state) {
+        if (world.isClient()) {
+            ClearColorPayload payload = new ClearColorPayload(pos, state != null);
+            ClientPlayNetworking.send(payload);
+        }
+        ColorManager.clearColor(pos, state);
     }
 }

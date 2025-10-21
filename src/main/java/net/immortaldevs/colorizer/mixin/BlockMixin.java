@@ -17,7 +17,7 @@ public class BlockMixin {
     @Inject(at = @At("HEAD"), method = "onBroken(Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V")
     public void onBroken(WorldAccess world, BlockPos pos, BlockState state, CallbackInfo info) {
         final Block block = (Block) (Object) this;
-        if (block instanceof ChestBlock) ColorManager.clearChestColor(pos, state);
+        if (block instanceof ChestBlock) ColorManager.clearColor(pos, state);
         if (block instanceof BarrelBlock) ColorManager.clearColor(pos);
     }
 }

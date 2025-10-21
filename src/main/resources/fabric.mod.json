@@ -23,10 +23,13 @@
   },
   "license": "MIT",
   "icon": "assets/colorizer/icon.png",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "client": [
       "net.immortaldevs.colorizer.ColorizerMod"
+    ],
+    "server": [
+      "net.immortaldevs.colorizer.ColorizerModServer"
     ]
   },
   "mixins": [

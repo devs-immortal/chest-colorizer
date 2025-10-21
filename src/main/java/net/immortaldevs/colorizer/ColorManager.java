@@ -104,9 +104,13 @@ public class ColorManager {
         return color;
     }
 
-    public static void updateColor(BlockPos pos, DyeItem dyeItem) {
+    public static void updateColor(BlockPos pos, BlockColor color) {
         String worldName = getLevelName();
-        Config.setColor(worldName, pos, BlockColor.fromDyeColor(dyeItem.getColor()));
+        Config.setColor(worldName, pos, color);
+    }
+
+    public static void updateColor(BlockPos pos, DyeItem dyeItem) {
+        updateColor(pos, BlockColor.fromDyeColor(dyeItem.getColor()));
     }
 
     public static void clearColor(BlockPos pos) {
@@ -114,7 +118,12 @@ public class ColorManager {
         Config.removeColor(worldName, pos);
     }
 
-    public static void clearChestColor(BlockPos pos, BlockState state) {
+    public static void clearColor(BlockPos pos, BlockState state) {
+        if (state == null) {
+            clearColor(pos);
+            return;
+        }
+
         Direction chestDirection = state.get(ChestBlock.FACING);
         ChestType chestType = state.get(ChestBlock.CHEST_TYPE);
         String worldName = getLevelName();

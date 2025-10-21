@@ -1,7 +1,10 @@
 package net.immortaldevs.colorizer;
 
+import io.netty.buffer.ByteBuf;
+import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.math.BlockPos;
 
 public enum BlockColor implements StringIdentifiable {
     DEFAULT("default"),
@@ -21,6 +24,14 @@ public enum BlockColor implements StringIdentifiable {
     PURPLE("purple"),
     MAGENTA("magenta"),
     PINK("pink");
+
+    public static final PacketCodec<ByteBuf, BlockColor> PACKET_CODEC = PacketCodec.of(
+            (color, buf) -> buf.writeInt(color.ordinal()),
+            buf -> {
+                int ordinal = buf.readInt();
+                return values()[ordinal];
+            }
+    );
 
     private final String name;
 
