@@ -6,8 +6,8 @@
   "plugin": "net.immortaldevs.colorizer.ColorizerMixinPlugin",
   "client": [
     "BlockMixin",
+    "ChestBlockEntityRendererMixin",
     "ItemMixin",
-    "TexturedRenderLayersMixin",
     "SectionBuilderMixin",
     "sodium.WorldSliceMixin"
   ],
