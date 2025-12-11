@@ -34,7 +34,7 @@ public class ColorizerMod implements ClientModInitializer {
         Config.load();
 
         ClientPlayNetworking.registerGlobalReceiver(UpdateColorPayload.ID, (payload, ctx) -> {
-            World world = ctx.player().getWorld();
+            World world = ctx.player().getEntityWorld();
             BlockPos pos = payload.pos();
 
             BlockState blockState = world.getBlockState(pos);
@@ -52,7 +52,7 @@ public class ColorizerMod implements ClientModInitializer {
             ColorManager.updateColor(payload.pos(), payload.color());
         });
         ClientPlayNetworking.registerGlobalReceiver(ClearColorPayload.ID, (payload, ctx) -> {
-            World world = ctx.player().getWorld();
+            World world = ctx.player().getEntityWorld();
             BlockPos pos = payload.pos();
 
             BlockEntity blockEntity = world.getBlockEntity(pos);

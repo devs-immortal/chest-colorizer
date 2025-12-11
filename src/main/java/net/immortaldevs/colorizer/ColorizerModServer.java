@@ -23,7 +23,7 @@ public class ColorizerModServer implements DedicatedServerModInitializer {
 
     private <T extends CustomPayload> void broadcastPayload(T payload, ServerPlayNetworking.Context context) {
         var sender = context.player();
-        for (ServerPlayerEntity player : PlayerLookup.world(sender.getWorld())) {
+        for (ServerPlayerEntity player : PlayerLookup.world(sender.getEntityWorld())) {
             if (player == sender) continue;
             ServerPlayNetworking.send(player, payload);
         }
