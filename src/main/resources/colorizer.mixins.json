@@ -7,6 +7,7 @@
   "client": [
     "BlockMixin",
     "ChestBlockEntityRendererMixin",
+    "ChestBlockEntityRenderStateMixin",
     "ItemMixin",
     "SectionBuilderMixin",
     "sodium.WorldSliceMixin"
