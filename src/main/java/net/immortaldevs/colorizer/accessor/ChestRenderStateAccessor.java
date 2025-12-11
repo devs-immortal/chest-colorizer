@@ -1,9 +1,10 @@
 package net.immortaldevs.colorizer.accessor;
 
-import net.minecraft.util.Identifier;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.world.dimension.DimensionType;
 
 public interface ChestRenderStateAccessor {
-    Identifier getDimension();
+    RegistryEntry<DimensionType> getDimension();
 
-    void setDimension(Identifier dimensionName);
+    void setDimension(RegistryEntry<DimensionType> dimensionName);
 }

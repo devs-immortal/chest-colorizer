@@ -14,9 +14,11 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 public class ColorizerMod implements ClientModInitializer {
     public static final String MOD_ID = "colorizer";
@@ -42,23 +44,24 @@ public class ColorizerMod implements ClientModInitializer {
                 blockState = blockState.with(BarrelBlock.OPEN, true);
                 world.setBlockState(pos, blockState);
 
-                ColorManager.updateColor(payload.pos(), payload.color());
+                ColorManager.updateColor(payload.dimension(), pos, payload.color());
 
                 blockState = blockState.with(BarrelBlock.OPEN, false);
                 world.setBlockState(pos, blockState);
                 return;
             }
 
-            ColorManager.updateColor(payload.pos(), payload.color());
+            ColorManager.updateColor(payload.dimension(), payload.pos(), payload.color());
         });
         ClientPlayNetworking.registerGlobalReceiver(ClearColorPayload.ID, (payload, ctx) -> {
             World world = ctx.player().getEntityWorld();
+            RegistryEntry<DimensionType> dimension = payload.dimension();
             BlockPos pos = payload.pos();
 
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof ChestBlockEntity) {
                 BlockState state = blockEntity.getCachedState();
-                ColorManager.clearColor(pos, state);
+                ColorManager.clearColor(dimension, pos, state);
                 return;
             }
 
@@ -67,7 +70,7 @@ public class ColorizerMod implements ClientModInitializer {
                 blockState = blockState.with(BarrelBlock.OPEN, true);
                 world.setBlockState(pos, blockState);
 
-                ColorManager.clearColor(pos);
+                ColorManager.clearColor(dimension, pos);
 
                 blockState = blockState.with(BarrelBlock.OPEN, false);
                 world.setBlockState(pos, blockState);

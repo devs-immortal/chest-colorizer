@@ -1,16 +1,18 @@
 package net.immortaldevs.colorizer;
 
+import net.immortaldevs.colorizer.accessor.ChestRenderStateAccessor;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.ChestType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.block.entity.state.ChestBlockEntityRenderState;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.item.DyeItem;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.dimension.DimensionType;
 
 import static net.minecraft.client.render.TexturedRenderLayers.CHEST_ATLAS_TEXTURE;
 
@@ -65,9 +67,9 @@ public class ColorManager {
     public static final SpriteIdentifier PINK_RIGHT = createChestTextureId("pink_right");
 
     public static SpriteIdentifier getColorizedTextureId(ChestBlockEntityRenderState chestRenderState) {
-        String worldName = getLevelName();
-        if (worldName == null) return null;
-        BlockColor color = getChestColor(worldName, chestRenderState);
+        String world = getLevelName();
+        if (world == null) return null;
+        BlockColor color = getChestColor(world, chestRenderState);
         ChestType type = chestRenderState.chestType;
         if (color == null) return null;
         return switch (color) {
@@ -99,57 +101,65 @@ public class ColorManager {
         };
     }
 
-    public static BlockColor getColor(BlockPos pos) {
-        String worldName = getLevelName();
-        BlockColor color = Config.getColor(worldName, pos);
+    public static BlockColor getColor(RegistryEntry<DimensionType> dimension, BlockPos pos) {
+        String world = getLevelName();
+        BlockColor color = Config.getColor(world, dimension.toString(), pos);
         if (color == null) return BlockColor.DEFAULT;
         return color;
     }
 
-    public static void updateColor(BlockPos pos, BlockColor color) {
-        String worldName = getLevelName();
-        Config.setColor(worldName, pos, color);
+    public static void updateColor(RegistryEntry<DimensionType> dimension, BlockPos pos, BlockColor color) {
+        String world = getLevelName();
+        Config.setColor(world, dimension.getIdAsString(), pos, color);
     }
 
-    public static void updateColor(BlockPos pos, DyeItem dyeItem) {
-        updateColor(pos, BlockColor.fromDyeColor(dyeItem.getColor()));
+    public static void updateColor(RegistryEntry<DimensionType> dimension, BlockPos pos, DyeItem dyeItem) {
+        updateColor(dimension, pos, BlockColor.fromDyeColor(dyeItem.getColor()));
     }
 
-    public static void clearColor(BlockPos pos) {
-        String worldName = getLevelName();
-        Config.removeColor(worldName, pos);
+    public static void clearColor(RegistryEntry<DimensionType> dimension, BlockPos pos) {
+        String world = getLevelName();
+        Config.removeColor(world, dimension.getIdAsString(), pos);
     }
 
-    public static void clearColor(BlockPos pos, BlockState state) {
+    public static void clearColor(RegistryEntry<DimensionType> dimension, BlockPos pos, BlockState state) {
+        String world = getLevelName();
+        clearColor(world, dimension, pos, state);
+    }
+
+    public static void clearColor(String world, RegistryEntry<DimensionType> dimension, BlockPos pos, BlockState state) {
         if (state == null) {
-            clearColor(pos);
+            clearColor(dimension, pos);
             return;
         }
 
         Direction chestDirection = state.get(ChestBlock.FACING);
         ChestType chestType = state.get(ChestBlock.CHEST_TYPE);
-        String worldName = getLevelName();
-        Config.removeColor(worldName, pos);
+        String dimensionName = dimension.getIdAsString();
+
+        Config.removeColor(world, dimensionName, pos);
         if (chestType == ChestType.LEFT) {
             BlockPos right = pos.offset(chestDirection.rotateYClockwise());
-            Config.removeColor(worldName, right);
+            Config.removeColor(world, dimensionName, right);
         } else if (chestType == ChestType.RIGHT) {
             BlockPos left = pos.offset(chestDirection.rotateYCounterclockwise());
-            Config.removeColor(worldName, left);
+            Config.removeColor(world, dimensionName, left);
         }
     }
 
-    private static BlockColor getChestColor(String worldName, ChestBlockEntityRenderState chestRenderState) {
-        BlockColor color = Config.getColor(worldName, chestRenderState.pos);
+    private static BlockColor getChestColor(String world, ChestBlockEntityRenderState chestRenderState) {
+        String dimension = ((ChestRenderStateAccessor) chestRenderState).getDimension().getIdAsString();
+        BlockColor color = Config.getColor(world, dimension, chestRenderState.pos);
         ChestType type = chestRenderState.chestType;
+
         if (color == null) {
             Direction chestDirection = chestRenderState.blockState.get(ChestBlock.FACING);
             if (type == ChestType.LEFT) {
                 BlockPos right = chestRenderState.pos.offset(chestDirection.rotateYClockwise());
-                color = Config.getColor(worldName, right);
+                color = Config.getColor(world, dimension, right);
             } else if (type == ChestType.RIGHT) {
                 BlockPos left = chestRenderState.pos.offset(chestDirection.rotateYCounterclockwise());
-                color = Config.getColor(worldName, left);
+                color = Config.getColor(world, dimension, left);
             }
         }
         return color;

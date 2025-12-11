@@ -56,20 +56,22 @@ public class ItemMixin {
 
     @Unique
     private void updateColor(World world, BlockPos pos, DyeItem dyeItem) {
+        var dimension = world.getDimensionEntry();
         if (world.isClient()) {
             BlockColor color = BlockColor.fromDyeColor(dyeItem.getColor());
-            UpdateColorPayload payload = new UpdateColorPayload(pos, color);
+            UpdateColorPayload payload = new UpdateColorPayload(dimension, pos, color);
             ClientPlayNetworking.send(payload);
         }
-        ColorManager.updateColor(pos, dyeItem);
+        ColorManager.updateColor(dimension, pos, dyeItem);
     }
 
     @Unique
     private void clearColor(World world, BlockPos pos, BlockState state) {
+        var dimension = world.getDimensionEntry();
         if (world.isClient()) {
-            ClearColorPayload payload = new ClearColorPayload(pos, state != null);
+            ClearColorPayload payload = new ClearColorPayload(dimension, pos, state != null);
             ClientPlayNetworking.send(payload);
         }
-        ColorManager.clearColor(pos, state);
+        ColorManager.clearColor(dimension, pos, state);
     }
 }

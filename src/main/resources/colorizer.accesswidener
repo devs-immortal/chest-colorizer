@@ -1,2 +1,3 @@
 accessWidener	v1	named
 accessible method net/minecraft/client/render/TexturedRenderLayers getChestTextureId (Lnet/minecraft/block/enums/ChestType;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/client/util/SpriteIdentifier;)Lnet/minecraft/client/util/SpriteIdentifier;
+accessible field net/minecraft/client/render/chunk/ChunkRendererRegion world Lnet/minecraft/world/World;

@@ -7,7 +7,6 @@ import net.minecraft.client.render.block.entity.ChestBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.state.ChestBlockEntityRenderState;
 import net.minecraft.client.render.command.ModelCommandRenderer;
 import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,7 +26,7 @@ public class ChestBlockEntityRendererMixin<T extends BlockEntity & LidOpenable> 
     private void storeDimensionInfo(T blockEntity, ChestBlockEntityRenderState renderState, float tickDelta, Vec3d cameraPos, ModelCommandRenderer.CrumblingOverlayCommand crumblingOverlay, CallbackInfo ci) {
         World world = blockEntity.getWorld();
         if (world != null) {
-            Identifier dimension = world.getRegistryKey().getValue();
+            var dimension = world.getDimensionEntry();
             ((ChestRenderStateAccessor) renderState).setDimension(dimension);
         }
     }
