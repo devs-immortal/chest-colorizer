@@ -1,12 +1,13 @@
 package net.immortaldevs.colorizer;
 
-import net.minecraft.client.MinecraftClient;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.util.HashMap;
 
 public class Config {
@@ -31,8 +32,9 @@ public class Config {
 
     public static void load() {
         try {
-            File file = MinecraftClient.getInstance().runDirectory.toPath().resolve("config/colorizer.csv").toFile();
+            File file = getConfigFile();
             if (!file.exists()) {
+                file.getParentFile().mkdirs();
                 file.createNewFile();
                 save();
                 return;
@@ -45,7 +47,8 @@ public class Config {
 
     public static void save() {
         try {
-            File file = MinecraftClient.getInstance().runDirectory.toPath().resolve("config/colorizer.csv").toFile();
+            File file = getConfigFile();
+            file.getParentFile().mkdirs();
             FileUtils.write(file, serialize(), "UTF-8");
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,6 +87,11 @@ public class Config {
                     BlockColor.fromName(color)
             );
         }
+    }
+
+    private static File getConfigFile() {
+        Path configPath = FabricLoader.getInstance().getConfigDir().resolve("colorizer.csv");
+        return configPath.toFile();
     }
 }
 
