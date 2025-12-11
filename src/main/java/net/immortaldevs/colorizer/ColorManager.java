@@ -5,6 +5,7 @@ import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.ChestType;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.block.entity.state.ChestBlockEntityRenderState;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.item.DyeItem;
 import net.minecraft.util.Identifier;
@@ -63,10 +64,11 @@ public class ColorManager {
     public static final SpriteIdentifier PINK_LEFT = createChestTextureId("pink_left");
     public static final SpriteIdentifier PINK_RIGHT = createChestTextureId("pink_right");
 
-    public static SpriteIdentifier getColorizedTextureId(BlockEntity entity, ChestType type) {
+    public static SpriteIdentifier getColorizedTextureId(ChestBlockEntityRenderState chestRenderState) {
         String worldName = getLevelName();
         if (worldName == null) return null;
-        BlockColor color = getChestColor(worldName, entity, type);
+        BlockColor color = getChestColor(worldName, chestRenderState);
+        ChestType type = chestRenderState.chestType;
         if (color == null) return null;
         return switch (color) {
             case WHITE -> getColorizedTextureId(type, WHITE, WHITE_LEFT, WHITE_RIGHT);
@@ -137,15 +139,16 @@ public class ColorManager {
         }
     }
 
-    private static BlockColor getChestColor(String worldName, BlockEntity entity, ChestType type) {
-        BlockColor color = Config.getColor(worldName, entity.getPos());
+    private static BlockColor getChestColor(String worldName, ChestBlockEntityRenderState chestRenderState) {
+        BlockColor color = Config.getColor(worldName, chestRenderState.pos);
+        ChestType type = chestRenderState.chestType;
         if (color == null) {
-            Direction chestDirection = entity.getCachedState().get(ChestBlock.FACING);
+            Direction chestDirection = chestRenderState.blockState.get(ChestBlock.FACING);
             if (type == ChestType.LEFT) {
-                BlockPos right = entity.getPos().offset(chestDirection.rotateYClockwise());
+                BlockPos right = chestRenderState.pos.offset(chestDirection.rotateYClockwise());
                 color = Config.getColor(worldName, right);
             } else if (type == ChestType.RIGHT) {
-                BlockPos left = entity.getPos().offset(chestDirection.rotateYCounterclockwise());
+                BlockPos left = chestRenderState.pos.offset(chestDirection.rotateYCounterclockwise());
                 color = Config.getColor(worldName, left);
             }
         }
