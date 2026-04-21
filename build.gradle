@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.16-SNAPSHOT'
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -13,13 +13,11 @@ repositories {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	modImplementation ("com.terraformersmc:modmenu:${project.modmenu_version}") {
-		exclude module: "fabric-api"
-	}
-	modCompileOnly "maven.modrinth:sodium:${project.sodium_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	implementation "maven.modrinth:sodium:${project.sodium_version}"
 }
 
 base {
@@ -30,7 +28,7 @@ processResources {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand "version": inputs.properties.version
 	}
 }
 
@@ -46,8 +44,10 @@ java {
 }
 
 jar {
+	inputs.property "archivesName", project.base.archivesName
+
 	from("LICENSE.md") {
-		rename { "${it}_${base.archivesName.get()}"}
+		rename { "${it}_${inputs.properties.archivesName}" }
 	}
 }
 

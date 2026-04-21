@@ -6,10 +6,10 @@
   "plugin": "net.immortaldevs.colorizer.ColorizerMixinPlugin",
   "client": [
     "BlockMixin",
-    "ChestBlockEntityRendererMixin",
+    "ChestRendererMixin",
     "ItemMixin",
     "SectionBuilderMixin",
-    "sodium.WorldSliceMixin"
+    "sodium.LevelSliceMixin"
   ],
   "injectors": {
     "defaultRequire": 1

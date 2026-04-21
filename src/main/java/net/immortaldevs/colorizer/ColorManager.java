@@ -1,74 +1,76 @@
 package net.immortaldevs.colorizer;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ChestBlock;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.enums.ChestType;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.block.entity.state.ChestBlockEntityRenderState;
-import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.item.DyeItem;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
+import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
-import static net.minecraft.client.render.TexturedRenderLayers.CHEST_ATLAS_TEXTURE;
+import static net.minecraft.client.renderer.Sheets.CHEST_SHEET;
 
 public class ColorManager {
-    public static final SpriteIdentifier WHITE = createChestTextureId("white");
-    public static final SpriteIdentifier WHITE_LEFT = createChestTextureId("white_left");
-    public static final SpriteIdentifier WHITE_RIGHT = createChestTextureId("white_right");
-    public static final SpriteIdentifier LIGHT_GRAY = createChestTextureId("light_gray");
-    public static final SpriteIdentifier LIGHT_GRAY_LEFT = createChestTextureId("light_gray_left");
-    public static final SpriteIdentifier LIGHT_GRAY_RIGHT = createChestTextureId("light_gray_right");
-    public static final SpriteIdentifier GRAY = createChestTextureId("gray");
-    public static final SpriteIdentifier GRAY_LEFT = createChestTextureId("gray_left");
-    public static final SpriteIdentifier GRAY_RIGHT = createChestTextureId("gray_right");
-    public static final SpriteIdentifier BLACK = createChestTextureId("black");
-    public static final SpriteIdentifier BLACK_LEFT = createChestTextureId("black_left");
-    public static final SpriteIdentifier BLACK_RIGHT = createChestTextureId("black_right");
-    public static final SpriteIdentifier BROWN = createChestTextureId("brown");
-    public static final SpriteIdentifier BROWN_LEFT = createChestTextureId("brown_left");
-    public static final SpriteIdentifier BROWN_RIGHT = createChestTextureId("brown_right");
-    public static final SpriteIdentifier RED = createChestTextureId("red");
-    public static final SpriteIdentifier RED_LEFT = createChestTextureId("red_left");
-    public static final SpriteIdentifier RED_RIGHT = createChestTextureId("red_right");
-    public static final SpriteIdentifier ORANGE = createChestTextureId("orange");
-    public static final SpriteIdentifier ORANGE_LEFT = createChestTextureId("orange_left");
-    public static final SpriteIdentifier ORANGE_RIGHT = createChestTextureId("orange_right");
-    public static final SpriteIdentifier YELLOW = createChestTextureId("yellow");
-    public static final SpriteIdentifier YELLOW_LEFT = createChestTextureId("yellow_left");
-    public static final SpriteIdentifier YELLOW_RIGHT = createChestTextureId("yellow_right");
-    public static final SpriteIdentifier LIME = createChestTextureId("lime");
-    public static final SpriteIdentifier LIME_LEFT = createChestTextureId("lime_left");
-    public static final SpriteIdentifier LIME_RIGHT = createChestTextureId("lime_right");
-    public static final SpriteIdentifier GREEN = createChestTextureId("green");
-    public static final SpriteIdentifier GREEN_LEFT = createChestTextureId("green_left");
-    public static final SpriteIdentifier GREEN_RIGHT = createChestTextureId("green_right");
-    public static final SpriteIdentifier CYAN = createChestTextureId("cyan");
-    public static final SpriteIdentifier CYAN_LEFT = createChestTextureId("cyan_left");
-    public static final SpriteIdentifier CYAN_RIGHT = createChestTextureId("cyan_right");
-    public static final SpriteIdentifier LIGHT_BLUE = createChestTextureId("light_blue");
-    public static final SpriteIdentifier LIGHT_BLUE_LEFT = createChestTextureId("light_blue_left");
-    public static final SpriteIdentifier LIGHT_BLUE_RIGHT = createChestTextureId("light_blue_right");
-    public static final SpriteIdentifier BLUE = createChestTextureId("blue");
-    public static final SpriteIdentifier BLUE_LEFT = createChestTextureId("blue_left");
-    public static final SpriteIdentifier BLUE_RIGHT = createChestTextureId("blue_right");
-    public static final SpriteIdentifier PURPLE = createChestTextureId("purple");
-    public static final SpriteIdentifier PURPLE_LEFT = createChestTextureId("purple_left");
-    public static final SpriteIdentifier PURPLE_RIGHT = createChestTextureId("purple_right");
-    public static final SpriteIdentifier MAGENTA = createChestTextureId("magenta");
-    public static final SpriteIdentifier MAGENTA_LEFT = createChestTextureId("magenta_left");
-    public static final SpriteIdentifier MAGENTA_RIGHT = createChestTextureId("magenta_right");
-    public static final SpriteIdentifier PINK = createChestTextureId("pink");
-    public static final SpriteIdentifier PINK_LEFT = createChestTextureId("pink_left");
-    public static final SpriteIdentifier PINK_RIGHT = createChestTextureId("pink_right");
+    public static final SpriteId WHITE = createChestTextureId("white");
+    public static final SpriteId WHITE_LEFT = createChestTextureId("white_left");
+    public static final SpriteId WHITE_RIGHT = createChestTextureId("white_right");
+    public static final SpriteId LIGHT_GRAY = createChestTextureId("light_gray");
+    public static final SpriteId LIGHT_GRAY_LEFT = createChestTextureId("light_gray_left");
+    public static final SpriteId LIGHT_GRAY_RIGHT = createChestTextureId("light_gray_right");
+    public static final SpriteId GRAY = createChestTextureId("gray");
+    public static final SpriteId GRAY_LEFT = createChestTextureId("gray_left");
+    public static final SpriteId GRAY_RIGHT = createChestTextureId("gray_right");
+    public static final SpriteId BLACK = createChestTextureId("black");
+    public static final SpriteId BLACK_LEFT = createChestTextureId("black_left");
+    public static final SpriteId BLACK_RIGHT = createChestTextureId("black_right");
+    public static final SpriteId BROWN = createChestTextureId("brown");
+    public static final SpriteId BROWN_LEFT = createChestTextureId("brown_left");
+    public static final SpriteId BROWN_RIGHT = createChestTextureId("brown_right");
+    public static final SpriteId RED = createChestTextureId("red");
+    public static final SpriteId RED_LEFT = createChestTextureId("red_left");
+    public static final SpriteId RED_RIGHT = createChestTextureId("red_right");
+    public static final SpriteId ORANGE = createChestTextureId("orange");
+    public static final SpriteId ORANGE_LEFT = createChestTextureId("orange_left");
+    public static final SpriteId ORANGE_RIGHT = createChestTextureId("orange_right");
+    public static final SpriteId YELLOW = createChestTextureId("yellow");
+    public static final SpriteId YELLOW_LEFT = createChestTextureId("yellow_left");
+    public static final SpriteId YELLOW_RIGHT = createChestTextureId("yellow_right");
+    public static final SpriteId LIME = createChestTextureId("lime");
+    public static final SpriteId LIME_LEFT = createChestTextureId("lime_left");
+    public static final SpriteId LIME_RIGHT = createChestTextureId("lime_right");
+    public static final SpriteId GREEN = createChestTextureId("green");
+    public static final SpriteId GREEN_LEFT = createChestTextureId("green_left");
+    public static final SpriteId GREEN_RIGHT = createChestTextureId("green_right");
+    public static final SpriteId CYAN = createChestTextureId("cyan");
+    public static final SpriteId CYAN_LEFT = createChestTextureId("cyan_left");
+    public static final SpriteId CYAN_RIGHT = createChestTextureId("cyan_right");
+    public static final SpriteId LIGHT_BLUE = createChestTextureId("light_blue");
+    public static final SpriteId LIGHT_BLUE_LEFT = createChestTextureId("light_blue_left");
+    public static final SpriteId LIGHT_BLUE_RIGHT = createChestTextureId("light_blue_right");
+    public static final SpriteId BLUE = createChestTextureId("blue");
+    public static final SpriteId BLUE_LEFT = createChestTextureId("blue_left");
+    public static final SpriteId BLUE_RIGHT = createChestTextureId("blue_right");
+    public static final SpriteId PURPLE = createChestTextureId("purple");
+    public static final SpriteId PURPLE_LEFT = createChestTextureId("purple_left");
+    public static final SpriteId PURPLE_RIGHT = createChestTextureId("purple_right");
+    public static final SpriteId MAGENTA = createChestTextureId("magenta");
+    public static final SpriteId MAGENTA_LEFT = createChestTextureId("magenta_left");
+    public static final SpriteId MAGENTA_RIGHT = createChestTextureId("magenta_right");
+    public static final SpriteId PINK = createChestTextureId("pink");
+    public static final SpriteId PINK_LEFT = createChestTextureId("pink_left");
+    public static final SpriteId PINK_RIGHT = createChestTextureId("pink_right");
 
-    public static SpriteIdentifier getColorizedTextureId(ChestBlockEntityRenderState chestRenderState) {
+    public static SpriteId getColorizedTextureId(ChestRenderState chestRenderState) {
         String worldName = getLevelName();
         if (worldName == null) return null;
         BlockColor color = getChestColor(worldName, chestRenderState);
-        ChestType type = chestRenderState.chestType;
+        ChestType type = chestRenderState.type;
         if (color == null) return null;
         return switch (color) {
             case WHITE -> getColorizedTextureId(type, WHITE, WHITE_LEFT, WHITE_RIGHT);
@@ -91,7 +93,7 @@ public class ColorManager {
         };
     }
 
-    public static SpriteIdentifier getColorizedTextureId(ChestType type, SpriteIdentifier normal, SpriteIdentifier left, SpriteIdentifier right) {
+    public static SpriteId getColorizedTextureId(ChestType type, SpriteId normal, SpriteId left, SpriteId right) {
         return switch (type) {
             case LEFT -> left;
             case RIGHT -> right;
@@ -108,7 +110,8 @@ public class ColorManager {
 
     public static void updateColor(BlockPos pos, DyeItem dyeItem) {
         String worldName = getLevelName();
-        Config.setColor(worldName, pos, BlockColor.fromDyeColor(dyeItem.getColor()));
+        DyeColor dyeColor = dyeItem.components().get(DataComponents.DYE);
+        Config.setColor(worldName, pos, BlockColor.fromDyeColor(dyeColor));
     }
 
     public static void clearColor(BlockPos pos) {
@@ -117,29 +120,29 @@ public class ColorManager {
     }
 
     public static void clearChestColor(BlockPos pos, BlockState state) {
-        Direction chestDirection = state.get(ChestBlock.FACING);
-        ChestType chestType = state.get(ChestBlock.CHEST_TYPE);
+        Direction chestDirection = state.getValue(ChestBlock.FACING);
+        ChestType chestType = state.getValue(ChestBlock.TYPE);
         String worldName = getLevelName();
         Config.removeColor(worldName, pos);
         if (chestType == ChestType.LEFT) {
-            BlockPos right = pos.offset(chestDirection.rotateYClockwise());
+            BlockPos right = pos.offset(chestDirection.getClockWise().getUnitVec3i());
             Config.removeColor(worldName, right);
         } else if (chestType == ChestType.RIGHT) {
-            BlockPos left = pos.offset(chestDirection.rotateYCounterclockwise());
+            BlockPos left = pos.offset(chestDirection.getCounterClockWise().getUnitVec3i());
             Config.removeColor(worldName, left);
         }
     }
 
-    private static BlockColor getChestColor(String worldName, ChestBlockEntityRenderState chestRenderState) {
-        BlockColor color = Config.getColor(worldName, chestRenderState.pos);
-        ChestType type = chestRenderState.chestType;
+    private static BlockColor getChestColor(String worldName, ChestRenderState chestRenderState) {
+        BlockColor color = Config.getColor(worldName, chestRenderState.blockPos);
+        ChestType type = chestRenderState.type;
         if (color == null) {
-            Direction chestDirection = chestRenderState.blockState.get(ChestBlock.FACING);
+            Direction chestDirection = chestRenderState.blockState.getValue(ChestBlock.FACING);
             if (type == ChestType.LEFT) {
-                BlockPos right = chestRenderState.pos.offset(chestDirection.rotateYClockwise());
+                BlockPos right = chestRenderState.blockPos.offset(chestDirection.getClockWise().getUnitVec3i());
                 color = Config.getColor(worldName, right);
             } else if (type == ChestType.RIGHT) {
-                BlockPos left = chestRenderState.pos.offset(chestDirection.rotateYCounterclockwise());
+                BlockPos left = chestRenderState.blockPos.offset(chestDirection.getCounterClockWise().getUnitVec3i());
                 color = Config.getColor(worldName, left);
             }
         }
@@ -147,17 +150,17 @@ public class ColorManager {
     }
 
     private static String getLevelName() {
-        MinecraftClient client = MinecraftClient.getInstance();
-        if (client.isInSingleplayer() && client.getServer() != null) {
-            return client.getServer().getSaveProperties().getLevelName();
+        Minecraft client = Minecraft.getInstance();
+        if (client.isSingleplayer() && client.getSingleplayerServer() != null) {
+            return client.getSingleplayerServer().getWorldData().getLevelName();
         }
-        if (!client.isInSingleplayer() && client.getCurrentServerEntry() != null) {
-            return client.getCurrentServerEntry().address;
+        if (!client.isSingleplayer() && client.getCurrentServer() != null) {
+            return client.getCurrentServer().ip;
         }
         return null;
     }
 
-    private static SpriteIdentifier createChestTextureId(String variant) {
-        return new SpriteIdentifier(CHEST_ATLAS_TEXTURE, Identifier.of(ColorizerMod.MOD_ID, "entity/chest/" + variant));
+    private static SpriteId createChestTextureId(String variant) {
+        return new SpriteId(CHEST_SHEET, Identifier.fromNamespaceAndPath(ColorizerMod.MOD_ID, "entity/chest/" + variant));
     }
 }

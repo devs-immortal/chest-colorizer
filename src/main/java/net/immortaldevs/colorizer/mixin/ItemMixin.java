@@ -1,17 +1,18 @@
 package net.immortaldevs.colorizer.mixin;
 
 import net.immortaldevs.colorizer.ColorManager;
-import net.minecraft.block.BarrelBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.item.DyeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BarrelBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.ChestBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,33 +20,33 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
 public class ItemMixin {
-    @Inject(at = @At("HEAD"), method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;")
-    public void useOnBlock(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+    @Inject(at = @At("HEAD"), method = "useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;")
+    public void useOnBlock(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         Item item = (Item) (Object) this;
-        World world = context.getWorld();
-        BlockPos blockPos = context.getBlockPos();
-        BlockEntity blockEntity = world.getBlockEntity(blockPos);
+        Level level = context.getLevel();
+        BlockPos blockPos = context.getClickedPos();
+        BlockEntity blockEntity = level.getBlockEntity(blockPos);
 
         if (blockEntity instanceof ChestBlockEntity) {
             if (item instanceof DyeItem dyeItem)
                 ColorManager.updateColor(blockPos, dyeItem);
             else if (item == Items.PAPER)
-                ColorManager.clearChestColor(blockPos, blockEntity.getCachedState());
+                ColorManager.clearChestColor(blockPos, blockEntity.getBlockState());
             return;
         }
 
-        BlockState blockState = context.getWorld().getBlockState(blockPos);
+        BlockState blockState = context.getLevel().getBlockState(blockPos);
         if (blockState.getBlock() instanceof BarrelBlock) {
-            blockState = blockState.with(BarrelBlock.OPEN, true);
-            world.setBlockState(blockPos, blockState);
+            blockState = blockState.setValue(BarrelBlock.OPEN, true);
+            level.setBlock(blockPos, blockState, Block.UPDATE_NONE);
 
             if (item instanceof DyeItem dyeItem)
                 ColorManager.updateColor(blockPos, dyeItem);
             else if (item == Items.PAPER)
                 ColorManager.clearColor(blockPos);
 
-            blockState = blockState.with(BarrelBlock.OPEN, false);
-            world.setBlockState(blockPos, blockState);
+            blockState = blockState.setValue(BarrelBlock.OPEN, false);
+            level.setBlock(blockPos, blockState, Block.UPDATE_NONE);
         }
     }
 }

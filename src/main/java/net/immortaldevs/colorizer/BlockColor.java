@@ -1,9 +1,10 @@
 package net.immortaldevs.colorizer;
 
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.DyeColor;
+import org.jspecify.annotations.NonNull;
 
-public enum BlockColor implements StringIdentifiable {
+public enum BlockColor implements StringRepresentable {
     DEFAULT("default"),
     WHITE("white"),
     LIGHT_GRAY("light_gray"),
@@ -63,7 +64,7 @@ public enum BlockColor implements StringIdentifiable {
     }
 
     @Override
-    public String asString() {
+    public @NonNull String getSerializedName() {
         return name;
     }
 }

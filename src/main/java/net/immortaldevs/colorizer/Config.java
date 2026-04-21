@@ -1,7 +1,7 @@
 package net.immortaldevs.colorizer;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -31,7 +31,7 @@ public class Config {
 
     public static void load() {
         try {
-            File file = MinecraftClient.getInstance().runDirectory.toPath().resolve("config/colorizer.csv").toFile();
+            File file = Minecraft.getInstance().gameDirectory.toPath().resolve("config/colorizer.csv").toFile();
             if (!file.exists()) {
                 file.createNewFile();
                 save();
@@ -45,7 +45,7 @@ public class Config {
 
     public static void save() {
         try {
-            File file = MinecraftClient.getInstance().runDirectory.toPath().resolve("config/colorizer.csv").toFile();
+            File file = Minecraft.getInstance().gameDirectory.toPath().resolve("config/colorizer.csv").toFile();
             FileUtils.write(file, serialize(), "UTF-8");
         } catch (IOException e) {
             e.printStackTrace();
