@@ -52,7 +52,7 @@ public class Config {
         }
     }
 
-    private static String serialize() {
+    static String serialize() {
         StringBuilder builder = new StringBuilder();
         for (String worldName : values.keySet()) {
             for (BlockPos position : values.get(worldName).keySet()) {
@@ -67,7 +67,7 @@ public class Config {
         return builder.toString();
     }
 
-    private static void deserialize(String data) {
+    static void deserialize(String data) {
         values.clear();
         String[] lines = data.split("\n");
         for (String line : lines) {
