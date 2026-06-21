@@ -1,12 +1,8 @@
 package net.immortaldevs.colorizer.mixin.sodium;
 
 import net.caffeinemc.mods.sodium.client.world.LevelSlice;
-import net.immortaldevs.colorizer.BlockColor;
 import net.immortaldevs.colorizer.ColorManager;
-import net.immortaldevs.colorizer.ColorizerMod;
-import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,11 +17,7 @@ public class LevelSliceMixin {
         BlockState state = cir.getReturnValue();
         if (state != null) {
             if (state.getBlock() == Blocks.BARREL) {
-                BlockColor color = ColorManager.getColor(new BlockPos(blockX, blockY, blockZ));
-                state = ColorizerMod.BARREL_BLOCK.defaultBlockState()
-                        .setValue(ColorizedBarrelBlock.COLOR, color)
-                        .setValue(BarrelBlock.FACING, state.getValue(BarrelBlock.FACING))
-                        .setValue(BarrelBlock.OPEN, state.getValue(BarrelBlock.OPEN));
+                state = ColorManager.getBarrelState(state, new BlockPos(blockX, blockY, blockZ));
             }
             cir.setReturnValue(state);
         }

@@ -1,8 +1,8 @@
 package net.immortaldevs.colorizer;
 
+import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
-import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,6 +10,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -132,6 +133,14 @@ public class ColorManager {
             Config.removeColor(worldName, left);
         }
     }
+
+    public static BlockState getBarrelState(BlockState state, BlockPos pos) {
+        return ColorizerMod.BARREL_BLOCK.defaultBlockState()
+                .setValue(ColorizedBarrelBlock.COLOR, getColor(pos))
+                .setValue(BarrelBlock.FACING, state.getValue(BarrelBlock.FACING))
+                .setValue(BarrelBlock.OPEN, state.getValue(BarrelBlock.OPEN));
+    }
+
 
     private static BlockColor getChestColor(String worldName, ChestRenderState chestRenderState) {
         BlockColor color = Config.getColor(worldName, chestRenderState.blockPos);
