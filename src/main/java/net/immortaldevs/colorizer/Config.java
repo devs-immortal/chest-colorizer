@@ -60,7 +60,7 @@ public class Config {
                         .append(position.getX()).append(";")
                         .append(position.getY()).append(";")
                         .append(position.getZ()).append(";")
-                        .append(values.get(worldName).get(position).getName())
+                        .append(values.get(worldName).get(position).getSerializedName())
                         .append("\n");
             }
         }

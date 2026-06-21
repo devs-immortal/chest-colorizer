@@ -31,7 +31,7 @@ public enum BlockColor implements StringRepresentable {
 
     public static BlockColor fromName(String name) {
         for (BlockColor color : values()) {
-            if (color.getName().equals(name)) {
+            if (color.getSerializedName().equals(name)) {
                 return color;
             }
         }
@@ -39,28 +39,7 @@ public enum BlockColor implements StringRepresentable {
     }
 
     public static BlockColor fromDyeColor(DyeColor color) {
-        return switch (color) {
-            case WHITE -> WHITE;
-            case LIGHT_GRAY -> LIGHT_GRAY;
-            case GRAY -> GRAY;
-            case BLACK -> BLACK;
-            case BROWN -> BROWN;
-            case RED -> RED;
-            case ORANGE -> ORANGE;
-            case YELLOW -> YELLOW;
-            case LIME -> LIME;
-            case GREEN -> GREEN;
-            case CYAN -> CYAN;
-            case LIGHT_BLUE -> LIGHT_BLUE;
-            case BLUE -> BLUE;
-            case PURPLE -> PURPLE;
-            case MAGENTA -> MAGENTA;
-            case PINK -> PINK;
-        };
-    }
-
-    public String getName() {
-        return name;
+        return valueOf(color.name());
     }
 
     @Override
