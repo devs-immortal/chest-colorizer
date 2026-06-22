@@ -4,6 +4,7 @@ import net.immortaldevs.colorizer.block.ColorizedBarrelBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
 import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.client.server.IntegratedServer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -160,10 +161,12 @@ public class ColorManager {
 
     private static String getLevelName() {
         Minecraft client = Minecraft.getInstance();
-        if (client.isSingleplayer() && client.getSingleplayerServer() != null) {
-            return client.getSingleplayerServer().getWorldData().getLevelName();
+        IntegratedServer singleplayerServer = client.getSingleplayerServer();
+
+        if (singleplayerServer != null) {
+            return singleplayerServer.getWorldData().getLevelName();
         }
-        if (!client.isSingleplayer() && client.getCurrentServer() != null) {
+        if (client.getCurrentServer() != null) {
             return client.getCurrentServer().ip;
         }
         return null;
