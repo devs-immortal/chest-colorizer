@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "chest-colorizer-test",
+  "version": "1.0.0",
+  "name": "Chest Colorizer Test",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-client-gametest": [
+      "net.immortaldevs.colorizer.ColorizerClientGameTest"
+    ]
+  },
+  "depends": {
+    "colorizer": "*"
+  }
+}

@@ -24,6 +24,14 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "chest-colorizer-test"
+		enableClientGameTests = true
+		eula = true
+	}
 }
 
 base {
