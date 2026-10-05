@@ -11,7 +11,7 @@ public class ColorizerClientGameTest implements FabricClientGameTest {
     @Override
     public void runTest(@NonNull ClientGameTestContext context) {
         try (TestSingleplayerContext singleplayer = context.worldBuilder().create()) {
-            singleplayer.getClientLevel().waitForChunksDownload();
+            singleplayer.getConnection().waitForChunksDownload();
 
             BlockPos chestPos = blockInFrontOfPlayer(singleplayer);
             BlockPos barrelPos = chestPos.east();
@@ -54,7 +54,7 @@ public class ColorizerClientGameTest implements FabricClientGameTest {
             ClientGameTestContext context, TestSingleplayerContext singleplayer, BlockPos target, String screenshotName
     ) {
         context.getInput().lookAt(target);
-        singleplayer.getClientLevel().waitForChunksRender();
+        singleplayer.getConnection().waitForChunksRender();
         context.waitTicks(5);
         context.takeScreenshot(screenshotName);
     }
